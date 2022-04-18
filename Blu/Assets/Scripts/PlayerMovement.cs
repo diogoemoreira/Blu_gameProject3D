@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && onGround){
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            HeartRateManager.instance.Jump();
         }
 
         velocity.y += gravity * Time.deltaTime;
