@@ -8,6 +8,7 @@ public class HeartRateManager : MonoBehaviour
     public int minHeartRate;
     public int maxHeartRate;
     private int multiplier;
+    private bool sprinting;
 
     private float hearRateUpdate = 0.5f;
     private float lastUpdate = 0f;
@@ -37,7 +38,13 @@ public class HeartRateManager : MonoBehaviour
 
     public void Jump()
     {
-        multiplier = 15;
+        multiplier = 5;
+    }
+
+    public void Sprint()
+    {
+        multiplier = 5;
+        sprinting = true;
     }
 
     // Update is called once per frame
@@ -52,7 +59,7 @@ public class HeartRateManager : MonoBehaviour
                 currentHeartRate = minHeartRate;
             }
 
-            if (currentHeartRate > minHeartRate + 30)
+            if (currentHeartRate > minHeartRate + 30 && !sprinting)
             {
                 currentHeartRate = minHeartRate + 30;
             }
@@ -65,6 +72,12 @@ public class HeartRateManager : MonoBehaviour
             UpdateUI();
             multiplier = 0;
             lastUpdate = Time.time;
+
+            if (sprinting)
+            {
+                sprinting = false;
+                multiplier = -5;
+            }
         }
     }
 }
