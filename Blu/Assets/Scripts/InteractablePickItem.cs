@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableSpeechItem : InteractableItem
+public class InteractablePickItem : InteractableItem
 {
-    public string speech;
+    public string item;
 
     protected override void TriggerInteraction()
     {
-        Debug.Log(speech);
+        Debug.Log("Item pickup: " + item);
     }
 }

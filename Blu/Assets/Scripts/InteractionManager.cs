@@ -52,8 +52,13 @@ public class InteractionManager : MonoBehaviour
             if (currentOrigin != closest)
             {
                 Destroy(currentInteractionText);
-                currentInteractionText = Instantiate(InteractionTextPrefab, closest.transform);
+                currentInteractionText = Instantiate(InteractionTextPrefab, closest.transform.position,new Quaternion(0f,0f,0f,0f));
                 currentOrigin = closest;
+            }
+
+            if (Input.GetButton("Interact"))
+            {
+                currentOrigin.GetComponent<InteractableItem>().Interact();
             }
         } else if (currentInteractionText != null)
         {
