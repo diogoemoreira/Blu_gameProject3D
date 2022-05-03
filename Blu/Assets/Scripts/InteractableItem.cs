@@ -10,7 +10,6 @@ public abstract class InteractableItem : MonoBehaviour
     {
         if (canInteract)
         {
-            Debug.Log("Press E to interact");
             if (Input.GetButton("Interact"))
             {
                 TriggerInteraction();
@@ -22,10 +21,12 @@ public abstract class InteractableItem : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         canInteract = true;
+        InteractionManager.instance.DisplayInteractionText(this.gameObject);
     }
     void OnTriggerExit(Collider other)
     {
         canInteract = false;
+        InteractionManager.instance.StopDisplayInteractText(this.gameObject);
     }
     protected abstract void TriggerInteraction();
 }
