@@ -6,19 +6,33 @@ public class GameManager : MonoBehaviour
 {
 
     //Singleton
-    private static GameManager _instance;
+    public static GameManager instance;
 
-    public static GameManager Instance { get { return _instance; } }
-
+    private List<string> items;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        items = new List<string>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddItem(string item)
     {
-        
+        items.Add(item);
+    }
+
+    public bool CheckForItem(string item)
+    {
+        return items.Contains(item);
     }
 }

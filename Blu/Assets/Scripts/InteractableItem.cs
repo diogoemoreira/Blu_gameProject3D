@@ -4,29 +4,29 @@ using UnityEngine;
 
 public abstract class InteractableItem : MonoBehaviour
 {
-    private bool canInteract = false;
-
-    protected virtual void Update()
+    private bool canInteract = true;
+    void OnTriggerEnter(Collider other)
     {
         if (canInteract)
         {
-            if (Input.GetButton("Interact"))
-            {
-                TriggerInteraction();
-                canInteract = false;
-            }
+            InteractionManager.instance.DisplayInteractionText(this.gameObject);
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        canInteract = true;
-        InteractionManager.instance.DisplayInteractionText(this.gameObject);
-    }
     void OnTriggerExit(Collider other)
+    {
+        InteractionManager.instance.StopDisplayInteractText(this.gameObject);
+    }
+
+    public void Interact()
+    {
+        TriggerInteraction();
+    }
+
+    protected void StopInteraction()
     {
         canInteract = false;
         InteractionManager.instance.StopDisplayInteractText(this.gameObject);
     }
+
     protected abstract void TriggerInteraction();
 }
