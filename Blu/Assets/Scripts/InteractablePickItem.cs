@@ -8,6 +8,8 @@ public class InteractablePickItem : InteractableItem
 
     protected override void TriggerInteraction()
     {
-        Debug.Log("Item pickup: " + item);
+        InteractionManager.instance.StopDisplayInteractText(this.gameObject);
+        GameManager.instance.AddItem(item);
+        Destroy(this.gameObject);
     }
 }

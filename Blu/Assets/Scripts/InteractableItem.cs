@@ -4,9 +4,13 @@ using UnityEngine;
 
 public abstract class InteractableItem : MonoBehaviour
 {
+    private bool canInteract = true;
     void OnTriggerEnter(Collider other)
     {
-        InteractionManager.instance.DisplayInteractionText(this.gameObject);
+        if (canInteract)
+        {
+            InteractionManager.instance.DisplayInteractionText(this.gameObject);
+        }
     }
     void OnTriggerExit(Collider other)
     {
@@ -16,6 +20,12 @@ public abstract class InteractableItem : MonoBehaviour
     public void Interact()
     {
         TriggerInteraction();
+    }
+
+    protected void StopInteraction()
+    {
+        canInteract = false;
+        InteractionManager.instance.StopDisplayInteractText(this.gameObject);
     }
 
     protected abstract void TriggerInteraction();

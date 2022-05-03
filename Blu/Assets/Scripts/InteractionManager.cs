@@ -12,7 +12,6 @@ public class InteractionManager : MonoBehaviour
     private GameObject currentInteractionText;
     private GameObject currentOrigin; 
     private List<GameObject> activeInteractableObjects;
-
     private void Awake()
     {
         if (instance != null)
@@ -40,7 +39,8 @@ public class InteractionManager : MonoBehaviour
             {
                 closest = activeInteractableObjects[i];
                 closestDist = Vector3.Distance(player.transform.position, closest.transform.position);
-            } else if (closestDist > Vector3.Distance(player.transform.position, activeInteractableObjects[i].transform.position))
+            }
+            else if (closestDist > Vector3.Distance(player.transform.position, activeInteractableObjects[i].transform.position))
             {
                 closest = activeInteractableObjects[i];
                 closestDist = Vector3.Distance(player.transform.position, closest.transform.position);
@@ -52,7 +52,7 @@ public class InteractionManager : MonoBehaviour
             if (currentOrigin != closest)
             {
                 Destroy(currentInteractionText);
-                currentInteractionText = Instantiate(InteractionTextPrefab, closest.transform.position,new Quaternion(0f,0f,0f,0f));
+                currentInteractionText = Instantiate(InteractionTextPrefab, closest.transform.position, new Quaternion(0f, 0f, 0f, 0f));
                 currentOrigin = closest;
             }
 
@@ -60,7 +60,8 @@ public class InteractionManager : MonoBehaviour
             {
                 currentOrigin.GetComponent<InteractableItem>().Interact();
             }
-        } else if (currentInteractionText != null)
+        }
+        else if (currentInteractionText != null)
         {
             Destroy(currentInteractionText);
             currentInteractionText = null;
@@ -70,8 +71,10 @@ public class InteractionManager : MonoBehaviour
 
     public void DisplayInteractionText(GameObject origin)
     {
-        activeInteractableObjects.Add(origin);
-
+        if (!activeInteractableObjects.Contains(origin))
+        {
+            activeInteractableObjects.Add(origin);
+        }
     }
 
     public void StopDisplayInteractText(GameObject origin)
