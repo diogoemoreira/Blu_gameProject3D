@@ -8,13 +8,14 @@ public class Flashlight : MonoBehaviour
     public float maxBrightness = 1f;
     public float minBrightness = 0.2f;
     public float drainRate = 2;
+    public float noBatteries=10;
     Light m_light;
-    float noBatteries=1;
 
     // Start is called before the first frame update
     void Start()
     {
         m_light = GetComponent<Light>();
+        m_light.enabled=false;
     }
 
     // Update is called once per frame
