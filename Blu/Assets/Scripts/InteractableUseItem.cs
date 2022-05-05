@@ -4,10 +4,11 @@ using UnityEngine;
 
 public abstract class InteractableUseItem : InteractableItem
 {
+    public bool neeedItem;
     public string neededItem;
     protected override void TriggerInteraction()
     {
-        if (neededItem != null)
+        if (neeedItem && neededItem != "")
         {
             if (GameManager.instance.CheckForItem(neededItem))
             {
@@ -18,7 +19,7 @@ public abstract class InteractableUseItem : InteractableItem
             }
         } else
         {
-            Debug.Log("Can use without any item");
+            Execute();
         }
     }
 
