@@ -19,11 +19,10 @@ public class PlayerLightDetection : MonoBehaviour
         lightDetected = 0f;
         foreach(GameObject plight in plights){
             float distance = Vector3.Distance(transform.position, plight.transform.position);
-            Debug.Log("Distance: "+distance);
             if(distance<detectionRange){
                 lightDetected += (1/distance);
             }
         }
-        Debug.Log(lightDetected);
+        HeartRateManager.instance.LightLevel(lightDetected);
     }
 }

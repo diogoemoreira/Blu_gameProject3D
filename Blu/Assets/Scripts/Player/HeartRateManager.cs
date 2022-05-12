@@ -47,6 +47,11 @@ public class HeartRateManager : MonoBehaviour
         sprinting = true;
     }
 
+    public void LightLevel(float lightLevel)
+    {
+        multiplier = (int)(lightLevel * 20.0f);
+    }
+
     // Update is called once per frame
     void Update()
     {
