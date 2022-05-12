@@ -7,9 +7,11 @@ public class DiaryPageInteraction : InteractableUseItem
     private Camera playerCamera;
     public GameObject pagePrefab;
     private GameObject pagina;
+    public Material material;
     private void Start()
     {
-        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();   
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        this.gameObject.GetComponent<MeshRenderer>().material = material;
     }
 
     private void Update()
@@ -21,7 +23,7 @@ public class DiaryPageInteraction : InteractableUseItem
                 Destroy(pagina);
                 pagina = null;
                 playerCamera.GetComponent<MouseLook>().enabled = true;
-                InteractionManager.instance.DisplayInteractionText(this.gameObject);
+                InteractionManager.instance.InteractionPaused(false);
             }
         }
     }
@@ -29,9 +31,10 @@ public class DiaryPageInteraction : InteractableUseItem
     protected override void Execute()
     {
         if (pagina != null) { return; }
-        InteractionManager.instance.StopDisplayInteractText(this.gameObject);
+        InteractionManager.instance.InteractionPaused(true);
         pagina = Instantiate(pagePrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-        pagina.transform.Rotate(-90,0,0);
+        pagina.transform.Rotate(90,180,0);
+        pagina.GetComponent<MeshRenderer>().material = material;
         playerCamera.GetComponent<MouseLook>().enabled = false;
     }
 }

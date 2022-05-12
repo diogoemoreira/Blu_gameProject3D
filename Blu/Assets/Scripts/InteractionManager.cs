@@ -12,6 +12,8 @@ public class InteractionManager : MonoBehaviour
     private GameObject currentInteractionText;
     private GameObject currentOrigin; 
     private List<GameObject> activeInteractableObjects;
+
+    private bool interactionPaused;
     private void Awake()
     {
         if (instance != null)
@@ -31,6 +33,13 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
+        if (interactionPaused) {
+            Destroy(currentInteractionText);
+            currentInteractionText = null;
+            currentOrigin = null;
+            return; 
+        }
+
         GameObject closest = null;
         float closestDist = 0.0f;
         for (int i = 0; i < activeInteractableObjects.Count; i++)
@@ -80,5 +89,10 @@ public class InteractionManager : MonoBehaviour
     public void StopDisplayInteractText(GameObject origin)
     {
         activeInteractableObjects.Remove(origin);
+    }
+
+    public void InteractionPaused(bool paused)
+    {
+        interactionPaused = paused;
     }
 }
