@@ -29,7 +29,7 @@ public class Flashlight : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.F)){
-            m_light.enabled = !m_light.enabled;
+            changeFlashlightStatus();
         }
 
         if(Input.GetKeyDown(KeyCode.R) && noBatteries>0){
@@ -41,6 +41,11 @@ public class Flashlight : MonoBehaviour
     public void ReplaceBattery(){
         m_light.intensity= maxBrightness;
         noBatteries-=1;
+    }
+
+    public void changeFlashlightStatus(){
+        //changes enabled status from flashlight
+        m_light.enabled = !m_light.enabled;
     }
 
     public void ChangeLightIntensity(float newLightIntensity){
