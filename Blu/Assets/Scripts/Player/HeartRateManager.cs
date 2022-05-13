@@ -7,7 +7,7 @@ public class HeartRateManager : MonoBehaviour
     public int currentHeartRate;
     public int minHeartRate;
     public int maxHeartRate;
-    private int multiplier;
+    public int multiplier;
     private bool sprinting;
 
     private float hearRateUpdate = 0.5f;
