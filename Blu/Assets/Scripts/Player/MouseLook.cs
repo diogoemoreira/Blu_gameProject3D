@@ -8,7 +8,7 @@ public class MouseLook : MonoBehaviour
 
     //Start is called before the first frame update
     private void Start() {
-        Cursor.lockState = CursorLockMode.Locked; //locks cursor so it doesn't go out of the screen
+        CameraLockData.setLock(true); //locks cursor so it doesn't go out of the screen
     }
 
     // Update is called once per frame

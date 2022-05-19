@@ -27,6 +27,7 @@ public class UIPause : MonoBehaviour, UIInterface
         canvas.alpha = 1;
         canvas.blocksRaycasts = true;
         Time.timeScale = 0;
+        CameraLockData.setLock(false);
         Data.setPaused(true);
         shade.SetActive(true);
     }
@@ -35,6 +36,7 @@ public class UIPause : MonoBehaviour, UIInterface
         canvas.alpha = 0;
         canvas.blocksRaycasts = false;
         Time.timeScale = 1;
+        CameraLockData.setLock(true);
         Data.setPaused(false);
         shade.SetActive(false);
         this.gameObject.SetActive(false);
