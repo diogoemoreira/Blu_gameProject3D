@@ -12,6 +12,7 @@ public class HeartRateManager : MonoBehaviour
 
     private float hearRateUpdate = 0.5f;
     private float lastUpdate = 0f;
+    private bool canUpdateLight = true;
 
     public static HeartRateManager instance;
     private void Awake()
@@ -49,7 +50,11 @@ public class HeartRateManager : MonoBehaviour
 
     public void LightLevel(float lightLevel)
     {
-        multiplier = (int)(lightLevel * 20.0f);
+        if (canUpdateLight)
+        {
+            multiplier += (int)((1 / lightLevel) * 0.5f);
+            canUpdateLight = false;
+        }
     }
 
     // Update is called once per frame
@@ -57,26 +62,28 @@ public class HeartRateManager : MonoBehaviour
     {
         if (Time.time > lastUpdate + hearRateUpdate)
         {
+            if (currentHeartRate > minHeartRate + 30 && !sprinting)
+            {
+                multiplier -= 5;
+            }
+
             currentHeartRate += Random.Range(-3 + multiplier, 3 + multiplier);
 
             if (currentHeartRate < minHeartRate)
             {
                 currentHeartRate = minHeartRate;
             }
-
-            if (currentHeartRate > minHeartRate + 30 && !sprinting)
-            {
-                currentHeartRate = minHeartRate + 30;
-            }
-
+            
             if (currentHeartRate > maxHeartRate)
             {
                 // FAINT
             }
 
+            HeartBeatUI.instance.UpdateHeartBeat(currentHeartRate);
             UpdateUI();
             multiplier = 0;
             lastUpdate = Time.time;
+            canUpdateLight = true;
 
             if (sprinting)
             {

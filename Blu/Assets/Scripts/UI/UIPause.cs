@@ -24,8 +24,6 @@ public class UIPause : MonoBehaviour, UIInterface
 
     public void FadeIn(){
         this.gameObject.SetActive(true);
-        canvas.alpha = 1;
-        canvas.blocksRaycasts = true;
         Time.timeScale = 0;
         CameraLockData.setLock(false);
         Data.setPaused(true);
@@ -33,8 +31,6 @@ public class UIPause : MonoBehaviour, UIInterface
     }
 
     public void FadeOut(){
-        canvas.alpha = 0;
-        canvas.blocksRaycasts = false;
         Time.timeScale = 1;
         CameraLockData.setLock(true);
         Data.setPaused(false);
