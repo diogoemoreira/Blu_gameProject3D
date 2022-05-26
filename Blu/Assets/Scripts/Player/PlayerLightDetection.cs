@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerLightDetection : MonoBehaviour
 {
-    float lightDetected = 0f;
-    float detectionRange = 20f;
+    public float lightDetected = 0f;
+    public float detectionRange = 20f;
     
     private int mask = 1<<9;
     private GameObject[] plights;
@@ -22,9 +22,12 @@ public class PlayerLightDetection : MonoBehaviour
         lightDetected = 0f;
         foreach(GameObject plight in plights){
             if(!Physics.Linecast(transform.position, plight.transform.position, mask)){
+                //get the distance from the light
                 float distance = Vector3.Distance(transform.position, plight.transform.position);
+
                 if(distance<detectionRange){
-                    lightDetected += (1/distance);
+                    float lightIntensity = plight.GetComponent<Light>().intensity; //in range light intensity
+                    lightDetected += (1/distance) * lightIntensity;
                 }
             }
         }

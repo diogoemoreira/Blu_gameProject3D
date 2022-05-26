@@ -24,6 +24,9 @@ public class DiaryPageInteraction : InteractableUseItem
                 pagina = null;
                 playerCamera.GetComponent<MouseLook>().enabled = true;
                 InteractionManager.instance.InteractionPaused(false);
+
+                //unlock interfaces
+                UIManager.UnlockInterfaces();
             }
         }
     }
@@ -31,6 +34,10 @@ public class DiaryPageInteraction : InteractableUseItem
     protected override void Execute()
     {
         if (pagina != null) { return; }
+
+        //lock interfaces
+        UIManager.LockInterfaces();
+
         InteractionManager.instance.InteractionPaused(true);
         pagina = Instantiate(pagePrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
         pagina.transform.Rotate(90,180,0);
