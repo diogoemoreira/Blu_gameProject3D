@@ -23,6 +23,7 @@ public class DiaryPageInteraction : InteractableUseItem
                 Destroy(pagina);
                 pagina = null;
                 playerCamera.GetComponent<MouseLook>().enabled = true;
+                playerCamera.transform.parent.GetComponent<CharacterController>().enabled = true;
                 InteractionManager.instance.InteractionPaused(false);
 
                 //unlock interfaces
@@ -43,5 +44,6 @@ public class DiaryPageInteraction : InteractableUseItem
         pagina.transform.Rotate(90,180,0);
         pagina.GetComponent<MeshRenderer>().material = material;
         playerCamera.GetComponent<MouseLook>().enabled = false;
+        playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
     }
 }
