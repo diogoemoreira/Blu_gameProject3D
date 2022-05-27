@@ -65,7 +65,7 @@ public class InteractionManager : MonoBehaviour
                 currentOrigin = closest;
             }
 
-            if (Input.GetButton("Interact"))
+            if (Input.GetButton("Interact") && !UIManager.IsPaused())
             {
                 currentOrigin.GetComponent<InteractableItem>().Interact();
             }

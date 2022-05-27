@@ -4,40 +4,60 @@ public class UIManager : MonoBehaviour
 {
     public UIPause pauseUI = null;
 
-    bool paused=false;
+    static bool paused=false;
     static bool lock_interface = false;
+    static bool justChanged = false;
     UIInterface ui = null;
 
     // Update is called once per frame
     void Update()
     {
-        if(!lock_interface){
-            if (paused && Input.GetKeyDown(KeyCode.Escape)){
-                if(ui!=null){
-                    ui.Activate();
-                    ui = null;
-                    paused = false;
+        if(!lock_interface)
+        {
+            if (Input.GetButtonDown("Cancel"))
+            {
+                if (!justChanged)
+                {
+                    if (paused)
+                    {
+                        if (ui != null)
+                        {
+                            ui.Activate();
+                            ui = null;
+                            paused = false;
+                        }
+                    }
+                    else
+                    {
+                        CheckKeyDown();
+                    }
                 }
-            }
-            else{
-                CheckKeyDown();
+                else
+                {
+                    justChanged = false;
+                }
             }
         }
     }
 
     void CheckKeyDown(){
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            pauseUI.Activate();
-            paused= !paused;
-            ui = (UIInterface) pauseUI;
-        }
+        pauseUI.Activate();
+        paused= true;
+        ui = (UIInterface) pauseUI;
     }
 
     public static void LockInterfaces(){
         lock_interface = true;
+        justChanged = true;
     }
 
     public static void UnlockInterfaces(){
         lock_interface = false;
+        justChanged = true;
+    }
+
+    public static bool IsPaused()
+    {
+        return paused;
     }
 }
