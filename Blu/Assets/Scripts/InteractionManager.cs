@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
-    public static InteractionManager instance;
+    public static InteractionManager instance {get; private set; }
     public GameObject InteractionTextPrefab;
 
     private GameObject player;
@@ -65,7 +65,7 @@ public class InteractionManager : MonoBehaviour
                 currentOrigin = closest;
             }
 
-            if (Input.GetButton("Interact") && !UIManager.IsPaused())
+            if (Input.GetButton("Interact") && !UIManager.instance.IsPaused())
             {
                 currentOrigin.GetComponent<InteractableItem>().Interact();
             }

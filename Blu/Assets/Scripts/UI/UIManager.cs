@@ -2,40 +2,48 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    //singleton can be read from other scripts but only set within its own class
+    public static UIManager instance {get; private set; }
+    //
+    
     public UIPause pauseUI = null;
+    bool paused=false;
 
-    static bool paused=false;
-    static bool lock_interface = false;
-    static bool justChanged = false;
+    //control variables
+    bool lock_interface = false;
+    bool justChanged = false;
+    //
+
     UIInterface ui = null;
 
+    private void Start() {
+        if(instance != null && instance != this){
+            Destroy(this);
+        }
+        else{
+            instance = this;
+        }
+    }
+
     // Update is called once per frame
-    void Update()
-    {
-        if(!lock_interface)
-        {
-            if (Input.GetButtonDown("Cancel"))
-            {
-                if (!justChanged)
-                {
-                    if (paused)
-                    {
-                        if (ui != null)
-                        {
-                            ui.Activate();
-                            ui = null;
-                            paused = false;
-                        }
-                    }
-                    else
-                    {
-                        CheckKeyDown();
+    void Update() {
+        //confirm if the interface isn't locked and the cancel button was pressed
+        if(!lock_interface && Input.GetButton("Cancel")) {
+            //confirm if control variables werent just changed
+            if (!justChanged) {
+                if (paused) {
+                    if (ui != null){
+                        ui.Activate();
+                        ui = null;
+                        paused = false;
                     }
                 }
-                else
-                {
-                    justChanged = false;
+                else {
+                    CheckKeyDown();
                 }
+            }
+            else {
+                justChanged = false;
             }
         }
     }
@@ -46,18 +54,18 @@ public class UIManager : MonoBehaviour
         ui = (UIInterface) pauseUI;
     }
 
-    public static void LockInterfaces(){
-        lock_interface = true;
-        justChanged = true;
+    public void LockInterfaces(){
+        instance.lock_interface = true;
+        instance.justChanged = true;
     }
 
-    public static void UnlockInterfaces(){
-        lock_interface = false;
-        justChanged = true;
+    public void UnlockInterfaces(){
+        instance.lock_interface = false;
+        instance.justChanged = true;
     }
 
-    public static bool IsPaused()
+    public bool IsPaused()
     {
-        return paused;
+        return instance.paused;
     }
 }

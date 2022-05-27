@@ -27,7 +27,7 @@ public class DiaryPageInteraction : InteractableUseItem
                 InteractionManager.instance.InteractionPaused(false);
 
                 //unlock interfaces
-                UIManager.UnlockInterfaces();
+                UIManager.instance.UnlockInterfaces();
             }
         }
     }
@@ -37,7 +37,7 @@ public class DiaryPageInteraction : InteractableUseItem
         if (pagina != null) { return; }
 
         //lock interfaces
-        UIManager.LockInterfaces();
+        UIManager.instance.LockInterfaces();
 
         InteractionManager.instance.InteractionPaused(true);
         pagina = Instantiate(pagePrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
