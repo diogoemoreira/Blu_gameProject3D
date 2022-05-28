@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update() {
         //confirm if the interface isn't locked and the cancel button was pressed
-        if(!lock_interface && Input.GetButton("Cancel")) {
+        if(!lock_interface && Input.GetButtonDown("Cancel")) {
             //confirm if control variables werent just changed
             if (!justChanged) {
                 if (paused) {
