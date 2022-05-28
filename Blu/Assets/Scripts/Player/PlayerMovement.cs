@@ -11,8 +11,15 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck; //center of the ground check sphere
     public float groundDistance = 0.4f; //radius of the sphere which will check if we are on the ground
     public LayerMask groundMask; //to control what objects the sphere should check for
-    public bool onGround=true;
-    Vector3 velocity;
+    
+    private bool onGround=true;
+    private bool crouched = false;
+    private Animator anim;
+    private Vector3 velocity;
+
+    private void Awake() {
+        this.anim = this.GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -33,6 +40,20 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump") && onGround){
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             HeartRateManager.instance.Jump();
+        }
+        if(Input.GetButtonDown("Crouch") && onGround){
+            if(crouched){
+                charControl.center = Vector3.zero;
+                charControl.height = 3f;
+                anim.Play("Uncrouch");
+                crouched=false;
+            }
+            else{
+                charControl.center = new Vector3(0, -0.5f, 0);
+                charControl.height = 2f;
+                anim.Play("Crouch");
+                crouched=true;
+            }
         }
 
         velocity.y += gravity * Time.deltaTime;
