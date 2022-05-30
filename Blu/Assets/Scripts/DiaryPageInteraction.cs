@@ -28,6 +28,8 @@ public class DiaryPageInteraction : InteractableUseItem
 
                 //unlock interfaces
                 UIManager.instance.UnlockInterfaces();
+
+                Journal.instance.AddPage(this.GetComponent<MeshRenderer>().material.mainTexture);
             }
         }
     }
