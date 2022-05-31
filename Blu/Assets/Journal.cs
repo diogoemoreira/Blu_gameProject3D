@@ -10,13 +10,16 @@ public class Journal : MonoBehaviour
     public Sprite[] pages;
 
     public Image leftPage;
-    public Image rightPage;
     public GameObject journal;
-    public GameObject leftButton;
-    public GameObject rightButton;
+    public GameObject journalBk;
+    public GameObject pageDisplay;
+
+    public GameObject page1;
+    public GameObject page2;
+    public GameObject page3;
+    public GameObject page4;
 
     private List<int> unlockedPages;
-    private int currentLastPage = 0;
     private void Awake()
     {
         if (instance != null)
@@ -31,11 +34,11 @@ public class Journal : MonoBehaviour
     void Start()
     {
         unlockedPages = new List<int>();
-        leftPage.enabled = false;
-        rightPage.enabled = false;
-        leftButton.SetActive(false);
-        rightButton.SetActive(false);
-        journal.SetActive(false);
+        journalBk.SetActive(false);
+        page1.SetActive(false);
+        page2.SetActive(false);
+        page3.SetActive(false);
+        page4.SetActive(false);
     }
 
     public void AddPage(Texture tex)
@@ -45,32 +48,36 @@ public class Journal : MonoBehaviour
             if (pages[i].name == tex.name)
             {
                 unlockedPages.Add(i);
-                ProcessPages();
+                ProcessNewPage(i);
                 break;
             }
         }
     }
 
-    private void ProcessPages()
+    private void ProcessNewPage(int page)
     {
-        unlockedPages.Sort();
-        if (unlockedPages.Count > 0)
-        { 
-            leftPage.sprite = pages[unlockedPages[0]];
-            currentLastPage = 0;
-            leftPage.GetComponent<Image>().enabled = true;
-
-            if (unlockedPages.Count > 1)
-            {
-                rightPage.sprite = pages[unlockedPages[1]];
-                currentLastPage = 1;
-                rightPage.GetComponent<Image>().enabled = true;
-
-                if (unlockedPages.Count > 2)
+        switch (page)
+        {
+            case 0:
                 {
-                    rightButton.SetActive(true);
+                    page1.SetActive(true);
+                    break;
                 }
-            }
+            case 1:
+                {
+                    page2.SetActive(true);
+                    break;
+                }
+            case 2:
+                {
+                    page3.SetActive(true);
+                    break;
+                }
+            case 3:
+                {
+                    page4.SetActive(true);
+                    break;
+                }
         }
     }
 
@@ -78,69 +85,23 @@ public class Journal : MonoBehaviour
     {
         if (Input.GetButtonDown("Journal") && !UIManager.instance.IsPaused())
         {
-            CameraLockData.setLock(journal.activeInHierarchy);
-            Time.timeScale = Convert.ToInt32(journal.activeInHierarchy);
-            journal.SetActive(!journal.activeInHierarchy);
-            Data.setPaused(journal.activeInHierarchy);
+            CameraLockData.setLock(journalBk.activeInHierarchy);
+            Time.timeScale = Convert.ToInt32(journalBk.activeInHierarchy);
+            journalBk.SetActive(!journalBk.activeInHierarchy);
+            Data.setPaused(journalBk.activeInHierarchy);
         }
     }
 
-    public void NextRight()
+    public void DisplayPage(int page)
     {
-        if (unlockedPages.Count > currentLastPage + 1)
-        {
-            currentLastPage++;
-            leftPage.sprite = pages[unlockedPages[currentLastPage]];
-
-            if (unlockedPages.Count > currentLastPage+2)
-            {
-                rightButton.SetActive(true);
-            } else
-            {
-                rightButton.SetActive(false);
-            }
-
-            currentLastPage++;
-            if (unlockedPages.Count > currentLastPage)
-            {
-                rightPage.enabled = true;
-                rightPage.sprite = pages[unlockedPages[currentLastPage]];
-            } else
-            {
-                rightPage.enabled = false;
-            }
-
-            leftButton.SetActive(true);
-        }
+        pageDisplay.GetComponent<Image>().sprite = pages[page];
+        journal.SetActive(false);
+        pageDisplay.SetActive(true);
     }
-    public void NextLeft()
+
+    public void ReturnToJournal()
     {
-        if (currentLastPage - 3 >= 0)
-        {
-            currentLastPage -= 3;
-            leftPage.sprite = pages[unlockedPages[currentLastPage]];
-
-            if (currentLastPage > 1)
-            {
-                leftButton.SetActive(true);
-            }
-            else
-            {
-                leftButton.SetActive(false);
-            }
-
-            currentLastPage++;
-            if (unlockedPages.Count > currentLastPage)
-            {
-                rightPage.enabled = true;
-                rightPage.sprite = pages[unlockedPages[currentLastPage]];
-            }
-            else
-            {
-                rightPage.enabled = false;
-            }
-
-            rightButton.SetActive(true);
-        }
+        journal.SetActive(true);
+        pageDisplay.SetActive(false);
     }
 }
