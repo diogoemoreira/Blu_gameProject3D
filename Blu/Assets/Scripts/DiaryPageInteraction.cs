@@ -24,12 +24,14 @@ public class DiaryPageInteraction : InteractableUseItem
                 pagina = null;
                 playerCamera.GetComponent<MouseLook>().enabled = true;
                 playerCamera.transform.parent.GetComponent<CharacterController>().enabled = true;
+                InteractionManager.instance.StopDisplayInteractText(this.gameObject);
                 InteractionManager.instance.InteractionPaused(false);
 
                 //unlock interfaces
                 UIManager.instance.UnlockInterfaces();
 
                 Journal.instance.AddPage(this.GetComponent<MeshRenderer>().material.mainTexture);
+                Destroy(this.gameObject);
             }
         }
     }

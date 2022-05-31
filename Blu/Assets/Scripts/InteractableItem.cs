@@ -7,7 +7,7 @@ public abstract class InteractableItem : MonoBehaviour
     private bool canInteract = true;
     void OnTriggerEnter(Collider other)
     {
-        if (canInteract)
+        if (other.tag == "Player" && canInteract)
         {
             InteractionManager.instance.DisplayInteractionText(this.gameObject);
         }
