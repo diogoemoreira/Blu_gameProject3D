@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1stFloor_NewFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a8152171bc8ca614fa71fff14bf75490, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8152171bc8ca614fa71fff14bf75490, type: 3}
 --- !u!4 &2956604 stripped
@@ -929,7 +933,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1458,7 +1462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2846678905413813584, guid: b5899c8927f4a2640b643799b3edbf4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.68
+      value: 0.898
       objectReference: {fileID: 0}
     - target: {fileID: 2846678905413813584, guid: b5899c8927f4a2640b643799b3edbf4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1926,7 +1930,7 @@ GameObject:
   - component: {fileID: 555790699}
   - component: {fileID: 555790698}
   - component: {fileID: 555790701}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2485,8 +2489,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 718382815}
-  - {fileID: 720864267}
   - {fileID: 1610358435}
+  - {fileID: 720864267}
   m_Father: {fileID: 1115537264}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2581,6 +2585,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d5660b2294b4a0748adc0094332caeec, type: 3}
       propertyPath: m_Name
       value: UG_Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d5660b2294b4a0748adc0094332caeec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5660b2294b4a0748adc0094332caeec, type: 3}
@@ -2950,7 +2958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2846678905413813584, guid: b5899c8927f4a2640b643799b3edbf4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.68
+      value: 0.898
       objectReference: {fileID: 0}
     - target: {fileID: 2846678905413813584, guid: b5899c8927f4a2640b643799b3edbf4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3910,8 +3918,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 27.44528, y: 19.127716, z: 11.13909}
-  m_Center: {x: -4.1044855, y: 4.277438, z: -4.0400405}
+  m_Size: {x: 27.44528, y: 19.127716, z: 17.076124}
+  m_Center: {x: -4.1044855, y: 4.277438, z: -1.0715287}
 --- !u!1001 &1087258233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5787,7 +5795,7 @@ Transform:
   - {fileID: 1891952333}
   - {fileID: 1346124300}
   m_Father: {fileID: 710671309}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1617282101 stripped
 GameObject:
@@ -5919,7 +5927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2846678905413813584, guid: b5899c8927f4a2640b643799b3edbf4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.68
+      value: 0.898
       objectReference: {fileID: 0}
     - target: {fileID: 2846678905413813584, guid: b5899c8927f4a2640b643799b3edbf4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6252,6 +6260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UG_Vent01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 856c297f6fc7a4c45bd65d5b02daee4c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 856c297f6fc7a4c45bd65d5b02daee4c, type: 3}
 --- !u!4 &1795804167 stripped
@@ -6450,7 +6462,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -7302,6 +7314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InsideStairs
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0be5a53057f93a440a07a8b60848ca7b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0be5a53057f93a440a07a8b60848ca7b, type: 3}
 --- !u!4 &1948160651 stripped
@@ -7615,7 +7631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2846678905413813584, guid: b5899c8927f4a2640b643799b3edbf4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.68
+      value: 0.898
       objectReference: {fileID: 0}
     - target: {fileID: 2846678905413813584, guid: b5899c8927f4a2640b643799b3edbf4e, type: 3}
       propertyPath: m_LocalPosition.z
