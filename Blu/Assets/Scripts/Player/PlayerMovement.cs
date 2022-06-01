@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
         onGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(onGround && velocity.y <0){
-            Debug.Log("in");
             velocity.y = -1f;
         }
 
