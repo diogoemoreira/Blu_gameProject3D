@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerLightDetection : MonoBehaviour
 {
-    public float lightDetected = 0f;
+    public float lightDetected = 0.000001f;
     public float detectionRange = 20f;
     
     private int mask = 1<<9;
@@ -19,7 +19,7 @@ public class PlayerLightDetection : MonoBehaviour
     void FixedUpdate()
     {
         //another option is using triggers and calling events
-        lightDetected = 0f;
+        lightDetected = 0.0000001f;
         foreach(GameObject plight in plights){
             if(!Physics.Linecast(transform.position, plight.transform.position, mask)){
                 //get the distance from the light

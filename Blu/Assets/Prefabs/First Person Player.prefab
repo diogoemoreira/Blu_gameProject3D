@@ -247,7 +247,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 3
-  m_Radius: 0.7
+  m_Radius: 0.6
   m_SlopeLimit: 45
   m_StepOffset: 0.5
   m_SkinWidth: 0.08
@@ -267,15 +267,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charControl: {fileID: 1088678912944988268}
   speed: 3
-  gravity: -20
+  gravity: -0.05
   jumpHeight: 0.5
   groundCheck: {fileID: 1088678913183303904}
-  groundDistance: 3
+  groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   onGround: 1
-  crouched: 1
 --- !u!114 &1088678912944988271
 MonoBehaviour:
   m_ObjectHideFlags: 0
