@@ -15,7 +15,7 @@ public abstract class InteractableUseItem : InteractableItem
                 Execute();
             } else
             {
-                Debug.Log("Dont have item");
+                SubtitlesManager.instance.DisplaySubtitles("I can't do this.");
             }
         } else
         {
