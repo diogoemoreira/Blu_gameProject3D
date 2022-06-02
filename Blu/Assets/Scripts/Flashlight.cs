@@ -11,6 +11,18 @@ public class Flashlight : MonoBehaviour
     public float noBatteries=10;
     Light m_light;
 
+    public static Flashlight instance;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+        } else
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +47,9 @@ public class Flashlight : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R) && noBatteries>0){
             ReplaceBattery();
         }
+        if(m_light.intensity<=minBrightness+0.1f){
+            changeFlashlightStatus(false);
+        }
         
     }
 
@@ -48,10 +63,19 @@ public class Flashlight : MonoBehaviour
         m_light.enabled = !m_light.enabled;
     }
 
+    public void changeFlashlightStatus(bool status){
+        //changes enabled status from flashlight
+        m_light.enabled = status;
+    }
+
     public void ChangeLightIntensity(float newLightIntensity){
         //used to change the intensity of the flash light
         m_light.intensity = newLightIntensity;
 
         m_light.intensity = Mathf.Clamp(m_light.intensity, minBrightness, maxBrightness);
+    }
+
+    public bool getFlashlightStatus(){
+        return m_light.enabled;
     }
 }

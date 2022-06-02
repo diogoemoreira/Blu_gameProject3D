@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class DoorInteraction : InteractableUseItem
 {
-    public Transform anchorPoint;
+    private bool opened = false;
     protected override void Execute()
     {
         this.StopInteraction();
-        this.transform.RotateAround(anchorPoint.position, new Vector3(0.0f, 1.0f, 0.0f), -90);  
+        if (!opened)
+        {
+            this.gameObject.GetComponent<Animator>().Play("OpenDoor");
+            opened = true;
+        } else
+        {
+            this.gameObject.GetComponent<Animator>().Play("CloseDoor");
+            opened = false;
+        }
+    }
+
+    public void AnimationOver()
+    {
+        this.StartInteraction();
     }
 }

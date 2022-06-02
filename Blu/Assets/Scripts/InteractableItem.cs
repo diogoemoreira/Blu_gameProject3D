@@ -5,16 +5,22 @@ using UnityEngine;
 public abstract class InteractableItem : MonoBehaviour
 {
     private bool canInteract = true;
+    private bool onColider = false;
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && canInteract)
         {
             InteractionManager.instance.DisplayInteractionText(this.gameObject);
+            onColider = true;
         }
     }
     void OnTriggerExit(Collider other)
     {
-        InteractionManager.instance.StopDisplayInteractText(this.gameObject);
+        if (other.tag == "Player")
+        {
+            InteractionManager.instance.StopDisplayInteractText(this.gameObject);
+            onColider = false;
+        }
     }
 
     public void Interact()
@@ -26,6 +32,14 @@ public abstract class InteractableItem : MonoBehaviour
     {
         canInteract = false;
         InteractionManager.instance.StopDisplayInteractText(this.gameObject);
+    }
+
+    protected void StartInteraction()
+    {
+        canInteract = true;
+        if (onColider) {
+            InteractionManager.instance.DisplayInteractionText(this.gameObject);
+        }
     }
 
     protected abstract void TriggerInteraction();
