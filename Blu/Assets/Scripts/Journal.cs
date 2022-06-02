@@ -90,6 +90,7 @@ public class Journal : MonoBehaviour
         if(Input.GetButtonDown("Cancel") && journalBk.activeInHierarchy){
             Activate();
         }
+        
     }
 
     public void Activate(){
