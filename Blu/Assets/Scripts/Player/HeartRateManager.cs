@@ -77,6 +77,7 @@ public class HeartRateManager : MonoBehaviour
             if (currentHeartRate > maxHeartRate)
             {
                 // FAINT
+                currentHeartRate = maxHeartRate;
             }
 
             HeartBeatUI.instance.UpdateHeartBeat(currentHeartRate);
