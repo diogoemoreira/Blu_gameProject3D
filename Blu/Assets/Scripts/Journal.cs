@@ -85,11 +85,18 @@ public class Journal : MonoBehaviour
     {
         if (Input.GetButtonDown("Journal") && !UIManager.instance.IsPaused())
         {
-            CameraLockData.setLock(journalBk.activeInHierarchy);
-            Time.timeScale = Convert.ToInt32(journalBk.activeInHierarchy);
-            journalBk.SetActive(!journalBk.activeInHierarchy);
-            Data.setPaused(journalBk.activeInHierarchy);
+            Activate();
         }
+        if(Input.GetButtonDown("Cancel") && journalBk.activeInHierarchy){
+            Activate();
+        }
+    }
+
+    public void Activate(){
+        CameraLockData.setLock(journalBk.activeInHierarchy);
+        Time.timeScale = Convert.ToInt32(journalBk.activeInHierarchy);
+        journalBk.SetActive(!journalBk.activeInHierarchy);
+        Data.setPaused(journalBk.activeInHierarchy);
     }
 
     public void DisplayPage(int page)
