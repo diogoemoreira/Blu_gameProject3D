@@ -8,6 +8,6 @@ public class InteractableSpeechItem : InteractableItem
 
     protected override void TriggerInteraction()
     {
-        Debug.Log(speech);
+        SubtitlesManager.instance.DisplaySubtitles(speech);
     }
 }
