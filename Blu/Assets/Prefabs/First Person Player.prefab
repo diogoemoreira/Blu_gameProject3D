@@ -130,7 +130,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 20
   m_SpotAngle: 80
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charControl: {fileID: 1088678912944988268}
   speed: 3
-  gravity: -0.5
+  gravity: -0.05
   jumpHeight: 0.5
   groundCheck: {fileID: 1088678913183303904}
   groundDistance: 0.4
