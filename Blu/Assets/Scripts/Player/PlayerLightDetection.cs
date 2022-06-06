@@ -21,7 +21,7 @@ public class PlayerLightDetection : MonoBehaviour
         //another option is using triggers and calling events
         lightDetected = 0f;
         foreach(GameObject plight in plights){
-            if(!Physics.Linecast(transform.position, plight.transform.position, mask)){
+            if(plight.GetComponent<Light>().enabled && !Physics.Linecast(transform.position, plight.transform.position, mask)){
                 //get the distance from the light
                 float distance = Vector3.Distance(transform.position, plight.transform.position);
 

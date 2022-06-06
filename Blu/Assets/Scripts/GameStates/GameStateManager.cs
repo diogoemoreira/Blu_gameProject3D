@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    public static GameStateManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+        } else
+        {
+            instance = this;
+        }
+    }
+
     GameBaseState currentState;
 
     public InitialGameState InitialState = new InitialGameState();
+    public PowerOutGameState PowerOutState = new PowerOutGameState();
     void Start()
     {
         currentState = InitialState;

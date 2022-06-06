@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class InitialGameState : GameBaseState
+public class PowerOutGameState : GameBaseState
 {
     public override void EnterState(GameStateManager gameState)
     {
@@ -9,7 +9,7 @@ public class InitialGameState : GameBaseState
 
         for (int i = 0; i < lights.Length; i++)
         {
-            lights[i].enabled = true;
+            lights[i].enabled = false;
         }
 
         GameObject emergencyLightGroup = GameObject.FindGameObjectWithTag("EmergencyLightsGroup");
@@ -17,7 +17,7 @@ public class InitialGameState : GameBaseState
 
         for (int i = 0; i < emergencyLights.Length; i++)
         {
-            emergencyLights[i].enabled = false;
+            emergencyLights[i].enabled = true;
         }
     }
     public override void UpdateState(GameStateManager gameState)
