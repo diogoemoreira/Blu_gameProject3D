@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class SubtitlesManager : MonoBehaviour
 {
     public static SubtitlesManager instance;
 
-    private Text textComponent;
+    private TextMeshProUGUI textComponent;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class SubtitlesManager : MonoBehaviour
 
     void Start()
     {
-        textComponent = this.GetComponent<Text>();
+        textComponent = this.GetComponent<TextMeshProUGUI>();
         textComponent.enabled = false;
     }
 

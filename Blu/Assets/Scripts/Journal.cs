@@ -7,9 +7,8 @@ using UnityEngine.UI;
 public class Journal : MonoBehaviour
 {
     public static Journal instance;
-    public Sprite[] pages;
+    public Sprite[] pagesSprites;
 
-    public Image leftPage;
     public GameObject journal;
     public GameObject journalBk;
     public GameObject pageDisplay;
@@ -20,6 +19,9 @@ public class Journal : MonoBehaviour
     public GameObject page4;
 
     private List<int> unlockedPages;
+
+    // Tasks
+    public Text tasksText;
     private void Awake()
     {
         if (instance != null)
@@ -43,9 +45,9 @@ public class Journal : MonoBehaviour
 
     public void AddPage(Texture tex)
     {
-        for (int i = 0; i < pages.Length; i++)
+        for (int i = 0; i < pagesSprites.Length; i++)
         {
-            if (pages[i].name == tex.name)
+            if (pagesSprites[i].name == tex.name)
             {
                 unlockedPages.Add(i);
                 ProcessNewPage(i);
@@ -102,7 +104,7 @@ public class Journal : MonoBehaviour
 
     public void DisplayPage(int page)
     {
-        pageDisplay.GetComponent<Image>().sprite = pages[page];
+        pageDisplay.GetComponent<Image>().sprite = pagesSprites[page];
         journal.SetActive(false);
         pageDisplay.SetActive(true);
     }
@@ -111,5 +113,10 @@ public class Journal : MonoBehaviour
     {
         journal.SetActive(true);
         pageDisplay.SetActive(false);
+    }
+
+    public void SetCurrentTask(string text)
+    {
+        tasksText.text = text;
     }
 }

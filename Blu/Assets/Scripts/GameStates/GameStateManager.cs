@@ -17,10 +17,12 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    GameBaseState currentState;
+    public GameBaseState currentState;
 
     public InitialGameState InitialState = new InitialGameState();
+    public GoToControlRoomState ControlRoomState = new GoToControlRoomState();
     public PowerOutGameState PowerOutState = new PowerOutGameState();
+    public CheckBrothersRoomState CheckBrothersState = new CheckBrothersRoomState();
     void Start()
     {
         currentState = InitialState;
