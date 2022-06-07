@@ -24,36 +24,39 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        onGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if(charControl.enabled){
+             onGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(onGround && velocity.y <0){
-            velocity.y = -1f;
-        }
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        charControl.Move(move * speed * Time.deltaTime);
-
-        if(Input.GetButtonDown("Crouch")){
-            if(crouched){
-                charControl.center = Vector3.zero;
-                charControl.height = 3f;
-                anim.Play("Uncrouch");
-                crouched=false;
+            if(onGround && velocity.y <0){
+                velocity.y = -1f;
             }
-            else{
-                charControl.center = new Vector3(0, -0.5f, 0);
-                charControl.height = 1.5f;
-                anim.Play("Crouch");
-                crouched=true;
+
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * z;
+
+            charControl.Move(move * speed * Time.deltaTime);
+
+            if(Input.GetButtonDown("Crouch")){
+                if(crouched){
+                    charControl.center = Vector3.zero;
+                    charControl.height = 3f;
+                    anim.Play("Uncrouch");
+                    crouched=false;
+                }
+                else{
+                    charControl.center = new Vector3(0, -0.5f, 0);
+                    charControl.height = 1.5f;
+                    anim.Play("Crouch");
+                    crouched=true;
+                }
             }
+
+            velocity.y += gravity ;
+
+            charControl.Move(velocity * Time.deltaTime);
         }
-
-        velocity.y += gravity ;
-
-        charControl.Move(velocity * Time.deltaTime);
+       
     }
 }
