@@ -52,7 +52,9 @@ public class HeartRateManager : MonoBehaviour
     {
         if (canUpdateLight)
         {
-            multiplier += (int)((1 / lightLevel) * 0.5f);
+            Debug.Log(lightLevel);
+            multiplier += Mathf.Min((int)((1 / (lightLevel + 0.01)) * 0.3f),20);
+            Debug.Log(multiplier);
             canUpdateLight = false;
         }
     }

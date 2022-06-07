@@ -27,7 +27,7 @@ public class PlayerLightDetection : MonoBehaviour
 
                 if(distance<detectionRange){
                     float lightIntensity = plight.GetComponent<Light>().intensity; //in range light intensity
-                    lightDetected += (1/distance) * lightIntensity;
+                    lightDetected += (1/distance) * (lightIntensity * 10);
                 }
             }
         }

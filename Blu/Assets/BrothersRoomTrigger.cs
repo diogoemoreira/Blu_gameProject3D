@@ -8,7 +8,7 @@ public class BrothersRoomTrigger : MonoBehaviour
     {
         if (other.tag == "Player" && typeof(CheckBrothersRoomState).IsInstanceOfType(GameStateManager.instance.currentState))
         {
-
+            GameStateManager.instance.SwitchState(GameStateManager.instance.SearchFamState);
         }
     }
 }

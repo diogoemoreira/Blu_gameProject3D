@@ -23,6 +23,7 @@ public class GameStateManager : MonoBehaviour
     public GoToControlRoomState ControlRoomState = new GoToControlRoomState();
     public PowerOutGameState PowerOutState = new PowerOutGameState();
     public CheckBrothersRoomState CheckBrothersState = new CheckBrothersRoomState();
+    public SearchFamilyState SearchFamState = new SearchFamilyState();
     void Start()
     {
         currentState = InitialState;
