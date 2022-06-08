@@ -14,7 +14,6 @@ public class SearchFamilyState : GameBaseState
     {
         if (Time.time > startTime + timeBeforePassOut)
         {
-            
         }    
     }
 }
