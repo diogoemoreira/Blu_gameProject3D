@@ -7518,6 +7518,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Cables
       objectReference: {fileID: 0}
+    - target: {fileID: 1551885872372937605, guid: 83aa5272f8767894b8c2c79a8e8b4319, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551885872372937605, guid: 83aa5272f8767894b8c2c79a8e8b4319, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551885872372937605, guid: 83aa5272f8767894b8c2c79a8e8b4319, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551885872372937605, guid: 83aa5272f8767894b8c2c79a8e8b4319, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551885872372937605, guid: 83aa5272f8767894b8c2c79a8e8b4319, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2808525160478053349, guid: 83aa5272f8767894b8c2c79a8e8b4319, type: 3}
       propertyPath: m_TagString
       value: Cables

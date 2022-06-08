@@ -8,6 +8,7 @@ TagManager:
   - NormalLightsGroup
   - EmergencyLightsGroup
   - Cables
+  - Dials
   layers:
   - Default
   - TransparentFX

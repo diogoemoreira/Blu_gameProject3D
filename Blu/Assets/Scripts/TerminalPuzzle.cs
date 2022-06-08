@@ -34,9 +34,9 @@ public class TerminalPuzzle : InteractableUseItem
     private Dictionary<string, int> cable_Dict = new Dictionary<string, int>();
 
 
-    private int[] termCode = new int[6];
-    private int[] currentTermOrder = new int[6];
-    private float dialRotation = 1/11f;
+    public int[] termCode = new int[6];
+    private int[] currentCodeOrder = new int[6]{0,0,0,0,0,0};
+    private float dialRotation;
     private Dictionary<string, int> code_Dict = new Dictionary<string, int>();
 
     // Start is called before the first frame update
@@ -45,6 +45,7 @@ public class TerminalPuzzle : InteractableUseItem
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         cableOrder = new int[3]{0,1,2};
+        dialRotation = 360/11f;
 
         System.Random rnd = new System.Random();
         cableOrder = cableOrder.OrderBy(x => rnd.Next()).ToArray();
@@ -57,7 +58,12 @@ public class TerminalPuzzle : InteractableUseItem
         cable_Dict.Add("Cabo.002", 1);
         cable_Dict.Add("Cabo.003", 2);
 
-        //code_Dict.Add("",0);
+        code_Dict.Add("Lock01",0);
+        code_Dict.Add("Lock02",1);
+        code_Dict.Add("Lock03",2);
+        code_Dict.Add("Lock04",3);
+        code_Dict.Add("Lock05",4);
+        code_Dict.Add("Lock06",5);
     }
 
     // Update is called once per frame
@@ -139,11 +145,19 @@ public class TerminalPuzzle : InteractableUseItem
                                 target = hit.collider.gameObject;
 
                                 //rotate the dial
+                                Transform goRot = target.gameObject.transform;
                                 
+                                goRot.Rotate(0, 0, dialRotation);
+                                Debug.Log("rot: " + goRot.rotation.z);
                                 //
-                                //currentTermOrder[code_Dict[target.name]]
-
+                                currentCodeOrder[code_Dict[target.name]] = (int) Mathf.Floor(goRot.rotation.z/dialRotation);
                             }
+                        }
+
+                        if(currentCableOrder.SequenceEqual(termCode)){
+                            //all phases complete
+                            phase=2;
+                            Debug.Log("Puzzle Complete");
                         }
                         
                         break;
