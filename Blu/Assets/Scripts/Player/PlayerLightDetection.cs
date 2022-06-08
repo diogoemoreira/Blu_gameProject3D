@@ -24,7 +24,6 @@ public class PlayerLightDetection : MonoBehaviour
             if(plight.GetComponent<Light>().enabled && !Physics.Linecast(transform.position, plight.transform.position, mask)){
                 //get the distance from the light
                 float distance = Vector3.Distance(transform.position, plight.transform.position);
-
                 if(distance<detectionRange){
                     float lightIntensity = plight.GetComponent<Light>().intensity; //in range light intensity
                     lightDetected += (1/distance) * (lightIntensity * 10);
