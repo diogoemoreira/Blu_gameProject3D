@@ -14,6 +14,8 @@ public class HeartRateManager : MonoBehaviour
     private float lastUpdate = 0f;
     private bool canUpdateLight = true;
 
+    private CharacterController charController;
+
     public static HeartRateManager instance;
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class HeartRateManager : MonoBehaviour
     {
         currentHeartRate = minHeartRate;
         multiplier = 0;
+        charController = this.GetComponent<CharacterController>();
     }
 
     private void UpdateUI()
@@ -52,7 +55,7 @@ public class HeartRateManager : MonoBehaviour
     {
         if (canUpdateLight)
         {
-            multiplier += (int)((1 / lightLevel) * 0.5f);
+            multiplier += Mathf.Min((int)((1 / (lightLevel + 0.01)) * 0.3f),20);
             canUpdateLight = false;
         }
     }
@@ -76,7 +79,9 @@ public class HeartRateManager : MonoBehaviour
             
             if (currentHeartRate > maxHeartRate)
             {
-                // FAINT
+                charController.enabled = false;
+                this.transform.position = SafeZoneManager.instance.GetLastSafeZone();
+                charController.enabled = true;
                 currentHeartRate = maxHeartRate;
             }
 

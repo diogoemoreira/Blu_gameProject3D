@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class GameStateChangeEvent : UnityEvent<GameBaseState>
+{
+}
 
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager instance;
+    public GameStateChangeEvent GSChangeEvent;
 
     private void Awake()
     {
@@ -17,15 +24,20 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    GameBaseState currentState;
+    public GameBaseState currentState;
 
     public InitialGameState InitialState = new InitialGameState();
+    public GoToControlRoomState ControlRoomState = new GoToControlRoomState();
     public PowerOutGameState PowerOutState = new PowerOutGameState();
+    public CheckBrothersRoomState CheckBrothersState = new CheckBrothersRoomState();
+    public SearchFamilyState SearchFamState = new SearchFamilyState();
     void Start()
     {
+        GSChangeEvent = new GameStateChangeEvent();
         currentState = InitialState;
 
         currentState.EnterState(this);
+        GSChangeEvent.Invoke(currentState);
     }
 
     // Update is called once per frame
@@ -38,5 +50,6 @@ public class GameStateManager : MonoBehaviour
     {
         currentState = state;
         state.EnterState(this);
+        GSChangeEvent.Invoke(currentState);
     }
 }

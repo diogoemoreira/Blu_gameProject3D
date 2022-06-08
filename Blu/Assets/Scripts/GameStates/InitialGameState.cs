@@ -19,6 +19,12 @@ public class InitialGameState : GameBaseState
         {
             emergencyLights[i].enabled = false;
         }
+
+        Transform wakeUpTransform = GameObject.Find("BluWakeUp").GetComponent<Transform>();
+        GameObject.FindGameObjectWithTag("Player").transform.position = wakeUpTransform.position;
+
+        Journal.instance.SetCurrentTask("- Check the task board in the living room.");
+        SubtitlesManager.instance.DisplaySubtitles("I need to go to the living room to check the task board.");
     }
     public override void UpdateState(GameStateManager gameState)
     {
