@@ -24,6 +24,7 @@ public class InitialGameState : GameBaseState
         GameObject.FindGameObjectWithTag("Player").transform.position = wakeUpTransform.position;
 
         Journal.instance.SetCurrentTask("- Check the task board in the living room.");
+        SubtitlesManager.instance.DisplaySubtitles("I don't know wich tasks i have to do today.");
         SubtitlesManager.instance.DisplaySubtitles("I need to go to the living room to check the task board.");
     }
     public override void UpdateState(GameStateManager gameState)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HeartRateManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class HeartRateManager : MonoBehaviour
     private bool canUpdateLight = true;
 
     private CharacterController charController;
+
+    public UnityEvent respawnEvent;
 
     public static HeartRateManager instance;
     private void Awake()
@@ -33,22 +36,12 @@ public class HeartRateManager : MonoBehaviour
         currentHeartRate = minHeartRate;
         multiplier = 0;
         charController = this.GetComponent<CharacterController>();
+        respawnEvent = new UnityEvent();
     }
 
-    private void UpdateUI()
+    public void ForceMultiplier(int mult)
     {
-
-    }
-
-    public void Jump()
-    {
-        multiplier = 5;
-    }
-
-    public void Sprint()
-    {
-        multiplier = 5;
-        sprinting = true;
+        multiplier = mult;
     }
 
     public void LightLevel(float lightLevel)
@@ -65,7 +58,7 @@ public class HeartRateManager : MonoBehaviour
     {
         if (Time.time > lastUpdate + hearRateUpdate)
         {
-            if (currentHeartRate > minHeartRate + 30 && !sprinting)
+            if (currentHeartRate > minHeartRate + 30)
             {
                 multiplier -= 5;
             }
@@ -82,11 +75,11 @@ public class HeartRateManager : MonoBehaviour
                 charController.enabled = false;
                 this.transform.position = SafeZoneManager.instance.GetLastSafeZone();
                 charController.enabled = true;
-                currentHeartRate = maxHeartRate;
+                currentHeartRate = minHeartRate;
+                respawnEvent.Invoke();
             }
 
             HeartBeatUI.instance.UpdateHeartBeat(currentHeartRate);
-            UpdateUI();
             multiplier = 0;
             lastUpdate = Time.time;
             canUpdateLight = true;

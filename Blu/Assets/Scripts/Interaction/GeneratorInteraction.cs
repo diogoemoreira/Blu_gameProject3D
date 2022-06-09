@@ -11,7 +11,13 @@ public class GeneratorInteraction : InteractableUseItem
 
     private void HandleGameStateChange(GameBaseState state)
     {
-        
+        if (state == GameStateManager.instance.TurnOffPowerState)
+        {
+            this.StartInteraction();
+        } else
+        {
+            this.StopInteraction();
+        }
     }
 
     protected override void Execute()
