@@ -10,6 +10,8 @@ public class SubtitlesManager : MonoBehaviour
 
     private TextMeshProUGUI textComponent;
 
+    private Queue<string> subtittlesQueue;
+    private bool canPlayNext = true;
     private void Awake()
     {
         if (instance != null)
@@ -25,18 +27,32 @@ public class SubtitlesManager : MonoBehaviour
     {
         textComponent = this.GetComponent<TextMeshProUGUI>();
         textComponent.enabled = false;
+        subtittlesQueue = new Queue<string>();
     }
 
     public void DisplaySubtitles(string text)
     {
-        textComponent.text = text;
-        textComponent.enabled = true;
-        StartCoroutine(CountDownSubtitles());
+        if (!subtittlesQueue.Contains(text))
+        {
+            subtittlesQueue.Enqueue(text);
+        }
+    }
+
+    private void Update()
+    {
+        if (canPlayNext && subtittlesQueue.Count > 0)
+        {
+            textComponent.text = subtittlesQueue.Dequeue();
+            textComponent.enabled = true;
+            canPlayNext = false;
+            StartCoroutine(CountDownSubtitles());
+        }
     }
 
     IEnumerator CountDownSubtitles()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         textComponent.enabled = false;
+        canPlayNext = true;
     }
 }

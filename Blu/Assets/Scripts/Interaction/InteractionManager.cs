@@ -80,7 +80,7 @@ public class InteractionManager : MonoBehaviour
 
     public void DisplayInteractionText(GameObject origin)
     {
-        if (!activeInteractableObjects.Contains(origin))
+        if (activeInteractableObjects != null && !activeInteractableObjects.Contains(origin))
         {
             activeInteractableObjects.Add(origin);
         }
@@ -88,7 +88,10 @@ public class InteractionManager : MonoBehaviour
 
     public void StopDisplayInteractText(GameObject origin)
     {
-        activeInteractableObjects.Remove(origin);
+        if (activeInteractableObjects != null)
+        {
+            activeInteractableObjects.Remove(origin);
+        }
     }
 
     public void InteractionPaused(bool paused)

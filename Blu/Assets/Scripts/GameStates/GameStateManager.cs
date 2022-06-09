@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class GameStateChangeEvent : UnityEvent<GameBaseState>
-{
-}
+public class GameStateChangeEvent : UnityEvent<GameBaseState> {}
 
 public class GameStateManager : MonoBehaviour
 {
@@ -22,6 +20,8 @@ public class GameStateManager : MonoBehaviour
         {
             instance = this;
         }
+
+        GSChangeEvent = new GameStateChangeEvent();
     }
 
     public GameBaseState currentState;
@@ -31,9 +31,12 @@ public class GameStateManager : MonoBehaviour
     public PowerOutGameState PowerOutState = new PowerOutGameState();
     public CheckBrothersRoomState CheckBrothersState = new CheckBrothersRoomState();
     public SearchFamilyState SearchFamState = new SearchFamilyState();
+    public CheckMainDoorState CheckMainDoorState = new CheckMainDoorState();
+    public FindDoorManualState DoorManualState = new FindDoorManualState();
+    public EnterMachineRoomState MachineRoomState = new EnterMachineRoomState();
+    public TurnOffPowerState TurnOffPowerState = new TurnOffPowerState();
     void Start()
     {
-        GSChangeEvent = new GameStateChangeEvent();
         currentState = InitialState;
 
         currentState.EnterState(this);
