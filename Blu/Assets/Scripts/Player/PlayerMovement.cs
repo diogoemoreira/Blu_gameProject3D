@@ -16,9 +16,12 @@ public class PlayerMovement : MonoBehaviour
     private bool crouched = false;
     private Animator anim;
     private Vector3 velocity;
+    private AudioSource audioSrc;
+
 
     private void Awake() {
         this.anim = this.GetComponent<Animator>();
+        this.audioSrc = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +59,15 @@ public class PlayerMovement : MonoBehaviour
             velocity.y += gravity ;
 
             charControl.Move(velocity * Time.deltaTime);
+
+            bool isMoving = move != Vector3.zero;
+            if (isMoving)
+            {
+                if (!audioSrc.isPlaying)
+                    audioSrc.Play();
+            }
+            else
+                audioSrc.Stop();
         }
        
     }
