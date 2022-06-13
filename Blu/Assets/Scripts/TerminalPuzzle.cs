@@ -10,9 +10,13 @@ public class TerminalPuzzle : InteractableUseItem
     public GameObject terminalPrefab;
 
     public GameObject front;
+
     public GameObject[] screws = new GameObject[4];
+
     public GameObject[] cables = new GameObject[3];
+
     public GameObject[] lock_nums = new GameObject[6];
+
     private Camera playerCamera;
 
     //define phases
@@ -29,7 +33,7 @@ public class TerminalPuzzle : InteractableUseItem
 
     private GameObject target;
 
-    private Dictionary<string, int> screw_Dict = new Dictionary<string, int>();
+    private Dictionary<string, GameObject> screw_Dict = new Dictionary<string, GameObject>();
     private int screwsRemoved = 0;
 
     public int[] cableOrder;
@@ -42,6 +46,17 @@ public class TerminalPuzzle : InteractableUseItem
     private int[] currentCodeOrder = new int[6]{0,0,0,0,0,0};
     private float dialRotation;
     private Dictionary<string, int> code_Dict = new Dictionary<string, int>();
+    private int currentDial = 1;
+
+    public static TerminalPuzzle instance;
+
+    void Awake() {
+        if (instance != null){
+            Destroy(this.gameObject);
+        } else {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +64,7 @@ public class TerminalPuzzle : InteractableUseItem
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         cableOrder = new int[3]{0,1,2};
-        dialRotation = 360/11f;
+        dialRotation = 360/10f;
 
         System.Random rnd = new System.Random();
         cableOrder = cableOrder.OrderBy(x => rnd.Next()).ToArray();
@@ -58,10 +73,10 @@ public class TerminalPuzzle : InteractableUseItem
             termCode[i] = (int)Mathf.Floor(Random.Range(0,10));
         }
 
-        screw_Dict.Add("Screw.001", 0);
-        screw_Dict.Add("Screw.002", 1);
-        screw_Dict.Add("Screw.003", 2);
-        screw_Dict.Add("Screw.004", 3);        
+        screw_Dict.Add("1", screws[0]);
+        screw_Dict.Add("2", screws[1]);
+        screw_Dict.Add("3", screws[2]);
+        screw_Dict.Add("4", screws[3]);        
 
         cable_Dict.Add("Cabo.001", 0);
         cable_Dict.Add("Cabo.002", 1);
@@ -102,6 +117,7 @@ public class TerminalPuzzle : InteractableUseItem
                     case 0:
                         // 0 is the first phase
                         Debug.Log("PHASE 1");
+
                         this.ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                         if (Physics.Raycast(ray, out hit)) {
@@ -113,13 +129,7 @@ public class TerminalPuzzle : InteractableUseItem
                             }
                         }
 
-                        if(screwsRemoved==4){
-                            //go to next phase
-                            Debug.Log("HEREEEEEE");
-                            front.SetActive(false);
-                            PhysicalPuzzleManager.instance.SetPhase(2);
-                            phase=1;
-                        }
+                        endPhase1();
                         
                         break;
                     case 1:
@@ -139,19 +149,7 @@ public class TerminalPuzzle : InteractableUseItem
                             }
                         }
 
-                        if(cablesRemoved==3){
-                            if(currentCableOrder.SequenceEqual(cableOrder)){
-                                //go to next phase
-                                PhysicalPuzzleManager.instance.SetPhase(3);
-                                phase=-1;
-                            }
-                            else{
-                                foreach(GameObject cable in cables){
-                                    cable.SetActive(true);
-                                    cablesRemoved=0;
-                                }
-                            }
-                        }
+                        endPhase2();
 
                         break;
                     case -1:
@@ -167,18 +165,12 @@ public class TerminalPuzzle : InteractableUseItem
                                 Transform goRot = target.gameObject.transform;
                                 
                                 goRot.Rotate(0, dialRotation, 0);
-                                Debug.Log("rot: " + goRot.rotation.z);
                                 //
-                                currentCodeOrder[code_Dict[target.name]] = (int) Mathf.Floor(goRot.rotation.z/dialRotation);
+                                currentCodeOrder[code_Dict[target.name]] = (int) Mathf.Floor(goRot.rotation.y/dialRotation);
                             }
                         }
 
-                        if(currentCableOrder.SequenceEqual(termCode)){
-                            //all phases complete
-                            PhysicalPuzzleManager.instance.PuzzleEnd();
-                            phase=2;
-                            Debug.Log("Puzzle Complete");
-                        }
+                        endPhase3();
                         
                         break;
                 }
@@ -201,5 +193,98 @@ public class TerminalPuzzle : InteractableUseItem
 
         interacting = true;
         PhysicalPuzzleManager.instance.InitPuzzle();
+    }
+
+    private void endPhase1(){
+        if(screwsRemoved==4){
+            //go to next phase
+            front.SetActive(false);
+            PhysicalPuzzleManager.instance.SetPhase(2);
+            phase=1;
+        }
+    }
+
+    private void endPhase2(){
+        if(cablesRemoved==3){
+            if(currentCableOrder.SequenceEqual(cableOrder)){
+                //go to next phase
+                PhysicalPuzzleManager.instance.SetPhase(3);
+                phase=-1;
+            }
+            else{
+                foreach(GameObject cable in cables){
+                    cable.SetActive(true);
+                    cablesRemoved=0;
+                }
+            }
+        }
+    }
+
+    private void endPhase3(){
+        if(currentCableOrder.SequenceEqual(termCode)){
+            //all phases complete
+            PhysicalPuzzleManager.instance.PuzzleEnd();
+            phase=2;
+            Debug.Log("Puzzle Complete");
+        }
+        else if(currentDial==6){
+            foreach(GameObject dial in lock_nums){                                
+                dial.transform.Rotate(0, 0, 0);
+            }
+            currentDial=1;
+        }
+    }
+
+    //static methods
+    public void removeScrew(string screwNum){
+        target = screw_Dict[screwNum];
+
+        screwsRemoved++;
+        target.SetActive(false);
+        
+        endPhase1();
+    }
+
+    public void removeCable(string cableNum){
+        string name = "Cabo.00"+cableNum;
+
+        foreach(GameObject cable in cables){
+            if(cable.name == name){
+                target = cable;
+                break;
+            }
+        }
+
+        //confirm which cable was removed
+        currentCableOrder[cablesRemoved]= cable_Dict[name];
+        //
+        cablesRemoved++;
+        target.SetActive(false);
+
+        endPhase2();
+    }
+
+    public void combNewNum(int val){
+        int _dialRotation = (int) Mathf.Floor(val/102.4f);
+
+        string name = "Lock0"+currentDial;
+
+        foreach(GameObject dial in lock_nums){
+            if(dial.name == name){
+                target = dial;
+                break;
+            }
+        }
+
+        //rotate the dial
+        Transform goRot = target.gameObject.transform;
+        
+        goRot.Rotate(0, _dialRotation, 0);
+        //
+        currentCodeOrder[code_Dict[target.name]] = (int) Mathf.Floor(goRot.rotation.y/dialRotation);
+
+        currentDial++;
+
+        endPhase3();
     }
 }

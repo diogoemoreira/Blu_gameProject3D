@@ -37,8 +37,12 @@ public class PhysicalPuzzleManager : MonoBehaviour
                 string[] args = message.Split(",");
 
                 if (args[0] == "parafusoRetirado"){
-                    
+                    TerminalPuzzle.instance.removeScrew(args[1]);
                 }
+                if (args[0] == "cableRemoved"){
+                    TerminalPuzzle.instance.removeCable(args[1]);
+                }
+                
 
             }
             catch (System.Exception)
