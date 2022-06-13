@@ -9,6 +9,7 @@ TagManager:
   - EmergencyLightsGroup
   - Cables
   - Dials
+  - Screws
   layers:
   - Default
   - TransparentFX

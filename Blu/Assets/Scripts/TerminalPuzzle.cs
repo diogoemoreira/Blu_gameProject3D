@@ -10,6 +10,7 @@ public class TerminalPuzzle : InteractableUseItem
     public GameObject terminalPrefab;
 
     public GameObject front;
+    public GameObject[] screws = new GameObject[4];
     public GameObject[] cables = new GameObject[3];
     public GameObject[] lock_nums = new GameObject[6];
     private Camera playerCamera;
@@ -27,6 +28,9 @@ public class TerminalPuzzle : InteractableUseItem
     private GameObject terminal=null;
 
     private GameObject target;
+
+    private Dictionary<string, int> screw_Dict = new Dictionary<string, int>();
+    private int screwsRemoved = 0;
 
     public int[] cableOrder;
     private int[] currentCableOrder = new int[3];
@@ -53,6 +57,11 @@ public class TerminalPuzzle : InteractableUseItem
         for(int i=0; i<6; i++){
             termCode[i] = (int)Mathf.Floor(Random.Range(0,10));
         }
+
+        screw_Dict.Add("Screw.001", 0);
+        screw_Dict.Add("Screw.002", 1);
+        screw_Dict.Add("Screw.003", 2);
+        screw_Dict.Add("Screw.004", 3);        
 
         cable_Dict.Add("Cabo.001", 0);
         cable_Dict.Add("Cabo.002", 1);
@@ -86,6 +95,7 @@ public class TerminalPuzzle : InteractableUseItem
                 CameraLockData.setLock(true);
                 UIManager.instance.UnlockInterfaces();
             }
+
         else if (Input.GetMouseButtonDown(0)){
             if(interacting){
                 switch(phase){
@@ -95,13 +105,20 @@ public class TerminalPuzzle : InteractableUseItem
                         this.ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                         if (Physics.Raycast(ray, out hit)) {
-                            if (hit.transform.name == "Terminall_Front" ){
+                            if (hit.transform.tag == "Screws" ){
                                 target = hit.collider.gameObject;
 
+                                screwsRemoved++;
                                 target.SetActive(false);
-
-                                phase=1;
                             }
+                        }
+
+                        if(screwsRemoved==4){
+                            //go to next phase
+                            Debug.Log("HEREEEEEE");
+                            front.SetActive(false);
+                            PhysicalPuzzleManager.instance.SetPhase(2);
+                            phase=1;
                         }
                         
                         break;
@@ -117,13 +134,15 @@ public class TerminalPuzzle : InteractableUseItem
                                 //confirm which cable was removed
                                 currentCableOrder[cablesRemoved]= cable_Dict[target.name];
                                 //
-                                target.SetActive(false);
                                 cablesRemoved++;
+                                target.SetActive(false);
                             }
                         }
 
                         if(cablesRemoved==3){
                             if(currentCableOrder.SequenceEqual(cableOrder)){
+                                //go to next phase
+                                PhysicalPuzzleManager.instance.SetPhase(3);
                                 phase=-1;
                             }
                             else{
@@ -147,7 +166,7 @@ public class TerminalPuzzle : InteractableUseItem
                                 //rotate the dial
                                 Transform goRot = target.gameObject.transform;
                                 
-                                goRot.Rotate(0, 0, dialRotation);
+                                goRot.Rotate(0, dialRotation, 0);
                                 Debug.Log("rot: " + goRot.rotation.z);
                                 //
                                 currentCodeOrder[code_Dict[target.name]] = (int) Mathf.Floor(goRot.rotation.z/dialRotation);
@@ -156,6 +175,7 @@ public class TerminalPuzzle : InteractableUseItem
 
                         if(currentCableOrder.SequenceEqual(termCode)){
                             //all phases complete
+                            PhysicalPuzzleManager.instance.PuzzleEnd();
                             phase=2;
                             Debug.Log("Puzzle Complete");
                         }
@@ -172,7 +192,7 @@ public class TerminalPuzzle : InteractableUseItem
 
         InteractionManager.instance.InteractionPaused(true);
         //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-        terminal = Instantiate(terminalPrefab, playerCamera.transform.forward * 0.5f, Quaternion.identity );
+        terminal = Instantiate(terminalPrefab, playerCamera.transform.forward * -0.5f, Quaternion.identity );
         
         CameraLockData.setLock(false);
 
@@ -180,5 +200,6 @@ public class TerminalPuzzle : InteractableUseItem
         playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
 
         interacting = true;
+        PhysicalPuzzleManager.instance.InitPuzzle();
     }
 }

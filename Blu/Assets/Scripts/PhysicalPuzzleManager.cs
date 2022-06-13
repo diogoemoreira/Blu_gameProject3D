@@ -9,11 +9,21 @@ public class PhysicalPuzzleManager : MonoBehaviour
     public string com = "COM2";
     public int baudrate = 9600;
 
+    public static PhysicalPuzzleManager instance;
+
+    void Awake() {
+        if (instance != null){
+            Destroy(this.gameObject);
+        } else {
+            instance = this;
+        }
+    }
+
     void Start()
     {
         ard = new SerialPort(com, baudrate);
         ard.Open();
-        ard.ReadTimeout = 1000;
+        ard.ReadTimeout = 16;
     }
 
     // Update is called once per frame
@@ -23,7 +33,13 @@ public class PhysicalPuzzleManager : MonoBehaviour
         {
             try
             {
-                print(ard.ReadLine());
+                string message = ard.ReadLine();
+                string[] args = message.Split(",");
+
+                if (args[0] == "parafusoRetirado"){
+                    
+                }
+
             }
             catch (System.Exception)
             {
@@ -35,5 +51,47 @@ public class PhysicalPuzzleManager : MonoBehaviour
     public void Close()
     {
         ard.Close();
+    }
+
+    public void InitPuzzle(){
+        if (ard.IsOpen)
+        {
+            try
+            {
+                ard.Write("init");
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+    }
+
+    public void SetPhase(int phase) {
+        if (ard.IsOpen)
+        {
+            try
+            {
+                ard.Write("phase"+phase);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+    }
+
+    public void PuzzleEnd(){
+        if (ard.IsOpen)
+        {
+            try
+            {
+                ard.Write("end");
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
     }
 }
