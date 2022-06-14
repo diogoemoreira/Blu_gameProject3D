@@ -43,7 +43,7 @@ public class TerminalPuzzle : InteractableUseItem
 
 
     public int[] termCode = new int[6];
-    private int[] currentCodeOrder = new int[6]{0,0,0,0,0,0};
+    public int[] currentCodeOrder = new int[6]{0,0,0,0,0,0};
     private float dialRotation;
     private Dictionary<string, int> code_Dict = new Dictionary<string, int>();
     private int currentDial = 1;
@@ -68,10 +68,11 @@ public class TerminalPuzzle : InteractableUseItem
 
         System.Random rnd = new System.Random();
         cableOrder = cableOrder.OrderBy(x => rnd.Next()).ToArray();
-        
-        for(int i=0; i<6; i++){
+
+        /*for(int i=0; i<6; i++){
             termCode[i] = (int)Mathf.Floor(Random.Range(0,10));
-        }
+        }*/
+        termCode = new int[] { 0, 1, 3, 6, 1, 0 };
 
         screw_Dict.Add("1", screws[0]);
         screw_Dict.Add("2", screws[1]);
@@ -221,13 +222,13 @@ public class TerminalPuzzle : InteractableUseItem
     }
 
     private void endPhase3(){
-        if(currentCableOrder.SequenceEqual(termCode)){
+        if(currentCodeOrder.SequenceEqual(termCode)){
             //all phases complete
             PhysicalPuzzleManager.instance.PuzzleEnd();
             phase=2;
             Debug.Log("Puzzle Complete");
         }
-        else if(currentDial==6){
+        else if(currentDial>6){
             foreach(GameObject dial in lock_nums){                                
                 dial.transform.Rotate(0, 0, 0);
             }
@@ -264,45 +265,85 @@ public class TerminalPuzzle : InteractableUseItem
         endPhase2();
     }
 
-    public void combNewNum(int val){
-        val = (int) Mathf.Floor(val/102.4f);
-        int _dialRotation=0;
+    private int lastInput = -1;
 
-        if(val==0)
+    public void combNewNum(int val)
+    {
+       
+        //val = (int)Mathf.Floor(val / 102.4f);
+        int _dialRotation = 0;
+
+        if (val < 5)
+        {
             //1
-            _dialRotation = 144;
-        else if(val==1)
+            _dialRotation = 144 +36;
+            val = 1;
+        }
+        else if (val <= 80)
+        {
             //2
-            _dialRotation = 108;
-        else if(val==2)
+            _dialRotation = 108 + 36;
+            val = 2;
+        }
+        else if (val <= 216)
+        {
             //3
-            _dialRotation = 72;
-        else if(val==3)
+            _dialRotation = 72 + 36;
+            val = 3;
+        }
+        else if (val <= 350)
+        {
             //4
-            _dialRotation = 36;
-        else if(val==4)
+            _dialRotation = 36 + 36;
+            val = 4;
+        }
+        else if (val <= 466)
+        {
             //5
-            _dialRotation = 0;
-        else if(val==5)
+            _dialRotation = 0 + 36;
+            val = 5;
+        }
+        else if (val <= 590)
+        {
             //6
-            _dialRotation = -36;
-        else if(val==6)
+            _dialRotation = -36 + 36;
+            val = 6;
+        }
+        else if (val <= 712)
+        {
             //7
-            _dialRotation = -72;
-        else if(val==7)
+            _dialRotation = -72 + 36;
+            val = 7;
+        }
+        else if (val <= 870)
+        {
             //8
-            _dialRotation = -108;
-        else if(val==8)
+            _dialRotation = -108 + 36;
+            val = 8;
+        }
+        else if (val <= 1000)
+        {
             //9
-            _dialRotation = -144;
-        else if(val<=10)
+            _dialRotation = -144 + 36;
+            val = 9;
+        }
+        else if (val <= 1024)
+        {
             //0
-            _dialRotation = 180;
+            _dialRotation = 180 + 36;
+            val = 0;
+        }
+        
+        if (lastInput == val) { return; }
+        lastInput = val;
 
-        string name = "Lock0"+currentDial;
+        Debug.Log("Final: " + val);
+        string name = "Lock0" + currentDial;
 
-        foreach(GameObject dial in lock_nums){
-            if(dial.name == name){
+        foreach (GameObject dial in lock_nums)
+        {
+            if (dial.name == name)
+            {
                 target = dial;
                 break;
             }
@@ -310,10 +351,10 @@ public class TerminalPuzzle : InteractableUseItem
 
         //rotate the dial
         Transform goRot = target.gameObject.transform;
-        
+
         goRot.Rotate(0, _dialRotation, 0);
         //
-        currentCodeOrder[code_Dict[target.name]] = (int) Mathf.Floor(goRot.rotation.y/dialRotation);
+        currentCodeOrder[code_Dict[target.name]] = val;
 
         currentDial++;
 
