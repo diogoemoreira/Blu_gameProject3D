@@ -265,7 +265,39 @@ public class TerminalPuzzle : InteractableUseItem
     }
 
     public void combNewNum(int val){
-        int _dialRotation = (int) Mathf.Floor(val/102.4f);
+        val = (int) Mathf.Floor(val/102.4f);
+        int _dialRotation=0;
+
+        if(val==0)
+            //1
+            _dialRotation = 144;
+        else if(val==1)
+            //2
+            _dialRotation = 108;
+        else if(val==2)
+            //3
+            _dialRotation = 72;
+        else if(val==3)
+            //4
+            _dialRotation = 36;
+        else if(val==4)
+            //5
+            _dialRotation = 0;
+        else if(val==5)
+            //6
+            _dialRotation = -36;
+        else if(val==6)
+            //7
+            _dialRotation = -72;
+        else if(val==7)
+            //8
+            _dialRotation = -108;
+        else if(val==8)
+            //9
+            _dialRotation = -144;
+        else if(val==9)
+            //0
+            _dialRotation = 180;
 
         string name = "Lock0"+currentDial;
 
