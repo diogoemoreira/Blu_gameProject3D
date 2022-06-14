@@ -295,7 +295,7 @@ public class TerminalPuzzle : InteractableUseItem
         else if(val==8)
             //9
             _dialRotation = -144;
-        else if(val==9)
+        else if(val<=10)
             //0
             _dialRotation = 180;
 
