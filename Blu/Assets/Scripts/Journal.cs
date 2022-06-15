@@ -118,5 +118,6 @@ public class Journal : MonoBehaviour
     public void SetCurrentTask(string text)
     {
         tasksText.text = text;
+        TaskPopUpManager.instance.DisplayTask(text);
     }
 }

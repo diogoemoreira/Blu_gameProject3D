@@ -19,6 +19,13 @@ public class PowerOutGameState : GameBaseState
         {
             emergencyLights[i].enabled = true;
         }
+
+        GameObject[] doorsToOpen = GameObject.FindGameObjectsWithTag("DoorKeyCardPowerOff");
+
+        for (int i=0;i< doorsToOpen.Length; i++)
+        {
+            doorsToOpen[i].GetComponent<DoorInteraction>().locked = false;
+        }
     }
     public override void UpdateState(GameStateManager gameState)
     {

@@ -5,17 +5,26 @@ using UnityEngine;
 public class DoorInteraction : InteractableUseItem
 {
     private bool opened = false;
+    public bool locked = false;
+    public string lockedMessage;
     protected override void Execute()
     {
-        this.StopInteraction();
-        if (!opened)
+        if (!locked)
         {
-            this.gameObject.GetComponent<Animator>().Play("OpenDoor");
-            opened = true;
+            this.StopInteraction();
+            if (!opened)
+            {
+                this.gameObject.GetComponent<Animator>().Play("OpenDoor");
+                opened = true;
+            }
+            else
+            {
+                this.gameObject.GetComponent<Animator>().Play("CloseDoor");
+                opened = false;
+            }
         } else
         {
-            this.gameObject.GetComponent<Animator>().Play("CloseDoor");
-            opened = false;
+            SubtitlesManager.instance.DisplaySubtitles(lockedMessage);
         }
     }
 

@@ -5,6 +5,7 @@ public class SearchFamilyState : GameBaseState
     private float startTime;
     private float timeBeforePassOut = 15.0f;
     private bool respawned = false;
+    private bool fadeProcessStarted = false;
     public override void EnterState(GameStateManager gameState)
     {
         Journal.instance.SetCurrentTask("- Search for your family.");
@@ -20,7 +21,15 @@ public class SearchFamilyState : GameBaseState
         }
         if (Time.time > startTime + timeBeforePassOut)
         {
-            HeartRateManager.instance.ForceMultiplier(20);
+            if (!fadeProcessStarted)
+            {
+                fadeProcessStarted = true;
+                SubtitlesManager.instance.DisplaySubtitles("Father?");
+                SubtitlesManager.instance.DisplaySubtitles("Mother?");
+                SubtitlesManager.instance.DisplaySubtitles("Brother?");
+                SubtitlesManager.instance.DisplaySubtitles("Where... Where are you?");
+            }
+            HeartRateManager.instance.ForceMultiplier(7);
         }    
     }
 
