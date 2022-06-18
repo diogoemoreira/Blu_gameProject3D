@@ -57,7 +57,27 @@ public class TerminalPuzzle : InteractableUseItem
             instance = this;
         }
     }
-
+    private bool checkState = false;
+    private bool canSolvePuzzle = false;
+    private void HandleGameStateChange(GameBaseState state)
+    {
+        checkState = false;
+        if (state == GameStateManager.instance.CheckMainDoorState)
+        {
+            this.neeedItem = false;
+            this.StartInteraction();
+            checkState = true;
+        } else if (state == GameStateManager.instance.PowerOutState)
+        {
+            canSolvePuzzle = true;
+            this.neeedItem = true;
+            this.StartInteraction();
+        }
+        else
+        {
+            this.StopInteraction();
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -89,6 +109,8 @@ public class TerminalPuzzle : InteractableUseItem
         code_Dict.Add("Lock04",3);
         code_Dict.Add("Lock05",4);
         code_Dict.Add("Lock06",5);
+
+        GameStateManager.instance.GSChangeEvent.AddListener(HandleGameStateChange);
     }
 
     // Update is called once per frame
@@ -183,17 +205,26 @@ public class TerminalPuzzle : InteractableUseItem
     protected override void Execute(){ 
         if(terminal!=null){return;}
 
-        InteractionManager.instance.InteractionPaused(true);
-        //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-        terminal = Instantiate(terminalPrefab, playerCamera.transform.forward * -0.5f, Quaternion.identity );
-        
-        CameraLockData.setLock(false);
+        if (checkState)
+        {
+            SubtitlesManager.instance.DisplaySubtitles("The door is locked...My brother had the key card.");
+            GameStateManager.instance.SwitchState(GameStateManager.instance.DoorManualState);
+            return;
+        }
+        if (canSolvePuzzle)
+        {
+            InteractionManager.instance.InteractionPaused(true);
+            //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
+            terminal = Instantiate(terminalPrefab, playerCamera.transform.forward * -0.5f, Quaternion.identity);
 
-        playerCamera.GetComponent<MouseLook>().enabled = false;
-        playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
+            CameraLockData.setLock(false);
 
-        interacting = true;
-        PhysicalPuzzleManager.instance.InitPuzzle();
+            playerCamera.GetComponent<MouseLook>().enabled = false;
+            playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
+
+            interacting = true;
+            PhysicalPuzzleManager.instance.InitPuzzle();
+        }
     }
 
     private void endPhase1(){

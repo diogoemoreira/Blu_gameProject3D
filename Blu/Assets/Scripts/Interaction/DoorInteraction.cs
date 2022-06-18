@@ -16,11 +16,13 @@ public class DoorInteraction : InteractableUseItem
             {
                 this.gameObject.GetComponent<Animator>().Play("OpenDoor");
                 opened = true;
+                this.gameObject.GetComponent<OcclusionPortal>().open = true;
             }
             else
             {
                 this.gameObject.GetComponent<Animator>().Play("CloseDoor");
                 opened = false;
+                this.gameObject.GetComponent<OcclusionPortal>().open = false;
             }
         } else
         {

@@ -26,6 +26,9 @@ public class PowerOutGameState : GameBaseState
         {
             doorsToOpen[i].GetComponent<DoorInteraction>().locked = false;
         }
+
+        SubtitlesManager.instance.DisplaySubtitles("Ok, so whats next? Hmmm, yes open the door terminal.");
+        Journal.instance.SetCurrentTask("- Open the bunker door.");
     }
     public override void UpdateState(GameStateManager gameState)
     {
