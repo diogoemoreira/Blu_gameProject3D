@@ -189,7 +189,10 @@ public class TerminalPuzzle : InteractableUseItem
                                 
                                 goRot.Rotate(0, dialRotation, 0);
                                 //
-                                currentCodeOrder[code_Dict[target.name]] = (int) Mathf.Floor(goRot.rotation.y/dialRotation);
+                                if(currentCodeOrder[code_Dict[target.name]]>=9)
+                                    currentCodeOrder[code_Dict[target.name]]=0;
+                                else
+                                    currentCodeOrder[code_Dict[target.name]]++;
                             }
                         }
 
