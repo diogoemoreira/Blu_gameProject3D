@@ -45,14 +45,14 @@ public class PlayerMovement : MonoBehaviour
                 if(crouched){
                     charControl.center = Vector3.zero;
                     charControl.height = 3f;
-                    anim.Play("Uncrouch");
                     crouched=false;
+                    this.GetComponentInChildren<Camera>().gameObject.transform.localPosition = new Vector3(0, 0.92f, 0.17f);
                 }
                 else{
                     charControl.center = new Vector3(0, -0.5f, 0);
                     charControl.height = 1.5f;
-                    anim.Play("Crouch");
                     crouched=true;
+                    this.GetComponentInChildren<Camera>().gameObject.transform.localPosition = new Vector3(0, -0.3f, -0.12f);
                 }
             }
 
@@ -65,9 +65,26 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (!audioSrc.isPlaying)
                     audioSrc.Play();
+                if (crouched)
+                {
+                    anim.Play("Crouch Walk");
+                }
+                else
+                {
+                    anim.Play("WalkBlu");
+                }
             }
             else
+            {
                 audioSrc.Stop();
+                if (crouched)
+                {
+                    anim.Play("Crouched Idle");
+                } else
+                {
+                    anim.Play("IdleBlu");
+                }
+            }
         }
        
     }
