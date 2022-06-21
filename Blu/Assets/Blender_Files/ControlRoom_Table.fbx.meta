@@ -3,7 +3,102 @@ guid: 7be6dae9d847a5f4bb030802c4c01534
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bot\xE3o 2"
+    second: {fileID: 2100000, guid: c7e696b2c9a16b84bb3f63a5b7a0dd29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bot\xE3o 2.001"
+    second: {fileID: 2100000, guid: 2b1030b6dc25f7c4595c29eb61abfdc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bot\xE3o 3"
+    second: {fileID: 2100000, guid: b5a1cd15f8d3ed745b04c85409aafeaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bot\xE3o 4"
+    second: {fileID: 2100000, guid: d5d413342210eb2438d68a286c4edca4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bot\xF5es 1"
+    second: {fileID: 2100000, guid: f7f5dda82c77cba4799cfba4f7bcea66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bot\xF5es 1.001"
+    second: {fileID: 2100000, guid: b3af875a2130c9c4a83d0c8feb7fceba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: b125c295d75220d4b8246a4fdf3bb12c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 1e9938705fcf2694b80b54753f1a2ef5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base
+    second: {fileID: 2100000, guid: 847a187531fbeff479d40577d2792f26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base alavanca
+    second: {fileID: 2100000, guid: 704db22b789f3544e8a48473142d01f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: branco candeiro
+    second: {fileID: 2100000, guid: 93b024e9d2523b24a98d6614d6fdfe46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cadeiro
+    second: {fileID: 2100000, guid: f0c6fc0c88ab71d42a0fb52d4f0640f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: codigo
+    second: {fileID: 2100000, guid: 8481467b50b1a604b97f1520fbef9435, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ecras
+    second: {fileID: 2100000, guid: 0af2bdd56dd92464f935aeff868b86b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teclado
+    second: {fileID: 2100000, guid: a62502e9fa073dc4eb3cff74b1ba311e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teclado.001
+    second: {fileID: 2100000, guid: a818385c8fb250f43a894d9db792bf40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teclas
+    second: {fileID: 2100000, guid: 8841409ffd21b50458fbebc012f084fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teclas.001
+    second: {fileID: 2100000, guid: 6725aef034d9a4845b11cb5dcbd20930, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal021_2K_Color
+    second: {fileID: 2800000, guid: 6a4a0dae1f19ac44cb9d31dc2b922049, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

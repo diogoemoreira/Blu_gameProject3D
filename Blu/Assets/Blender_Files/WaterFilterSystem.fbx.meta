@@ -3,7 +3,17 @@ guid: a61ae4ff475549a4fb641258c5bb78e8
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial
+    second: {fileID: 2100000, guid: 53bfb137fa3ee9f489bba7b05897a966, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_albedo
+    second: {fileID: 2800000, guid: 725189e62f4d21341864a4908f966878, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,9 +3,39 @@ guid: ac5c91a8e495c2c4baf713ce8bbcaf06
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BotoesTerminal
+    second: {fileID: 2100000, guid: a51f3ea599d207d41afbdaf4ab88f30b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass Mat Material
+    second: {fileID: 2100000, guid: 6714e28dcdf33534f9cb3585095677d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass Material
+    second: {fileID: 2100000, guid: 858070414f60a7d41bb76f17b393aefb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV light Material
+    second: {fileID: 2100000, guid: 98853e84a84f4ec4fa0ed3a08b93d82b, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: grass texture base color
+    second: {fileID: 2800000, guid: 6b55ce11ac13ddc4bb104fb296842fd1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hay-texture
+    second: {fileID: 2800000, guid: f72960f03864e984f80f6d36e0f9a4e0, type: 3}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
