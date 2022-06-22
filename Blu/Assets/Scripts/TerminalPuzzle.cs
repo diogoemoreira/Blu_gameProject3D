@@ -6,7 +6,7 @@ using System.Linq;
 
 public class TerminalPuzzle : InteractableUseItem
 {
-    
+    public GameObject player;
     public GameObject terminalPrefab;
 
     public GameObject front;
@@ -219,7 +219,7 @@ public class TerminalPuzzle : InteractableUseItem
         {
             InteractionManager.instance.InteractionPaused(true);
             //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-            terminal = Instantiate(terminalPrefab, playerCamera.transform.forward * -0.5f, Quaternion.identity);
+            player.transform.position = new Vector3(-5.5f, 0.83f,59f);
 
             CameraLockData.setLock(false);
 
@@ -227,7 +227,8 @@ public class TerminalPuzzle : InteractableUseItem
             playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
 
             interacting = true;
-            PhysicalPuzzleManager.instance.InitPuzzle();
+            if(PhysicalPuzzleManager.instance !=null)
+                PhysicalPuzzleManager.instance.InitPuzzle();
         }
     }
 
@@ -236,7 +237,8 @@ public class TerminalPuzzle : InteractableUseItem
             //go to next phase
             front.SetActive(false);
             phase=1;
-            PhysicalPuzzleManager.instance.SetPhase(2);
+            if(PhysicalPuzzleManager.instance !=null)
+                PhysicalPuzzleManager.instance.SetPhase(2);
         }
     }
 
@@ -245,7 +247,8 @@ public class TerminalPuzzle : InteractableUseItem
             if(currentCableOrder.SequenceEqual(cableOrder)){
                 //go to next phase
                 phase=-1;
-                PhysicalPuzzleManager.instance.SetPhase(3);
+                if(PhysicalPuzzleManager.instance !=null)
+                    PhysicalPuzzleManager.instance.SetPhase(3);
             }
             else{
                 foreach(GameObject cable in cables){
@@ -261,7 +264,8 @@ public class TerminalPuzzle : InteractableUseItem
             //all phases complete
             phase=2;
             Debug.Log("Puzzle Complete");
-            PhysicalPuzzleManager.instance.PuzzleEnd();
+            if(PhysicalPuzzleManager.instance !=null)
+                PhysicalPuzzleManager.instance.PuzzleEnd();
         }
         else if(currentDial>6){
             foreach(GameObject dial in lock_nums){                                

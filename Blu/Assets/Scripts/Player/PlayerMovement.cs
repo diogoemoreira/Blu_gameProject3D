@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             bool isMoving = move != Vector3.zero;
             if (isMoving)
             {
-                if (!audioSrc.isPlaying)
+                if (audioSrc!=null && !audioSrc.isPlaying)
                     audioSrc.Play();
                 if (crouched)
                 {
