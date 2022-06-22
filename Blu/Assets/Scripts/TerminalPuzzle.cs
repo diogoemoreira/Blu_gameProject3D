@@ -111,6 +111,7 @@ public class TerminalPuzzle : InteractableUseItem
         code_Dict.Add("Lock06",5);
 
         GameStateManager.instance.GSChangeEvent.AddListener(HandleGameStateChange);
+        
     }
 
     // Update is called once per frame
@@ -234,8 +235,8 @@ public class TerminalPuzzle : InteractableUseItem
         if(screwsRemoved==4){
             //go to next phase
             front.SetActive(false);
-            PhysicalPuzzleManager.instance.SetPhase(2);
             phase=1;
+            PhysicalPuzzleManager.instance.SetPhase(2);
         }
     }
 
@@ -243,8 +244,8 @@ public class TerminalPuzzle : InteractableUseItem
         if(cablesRemoved==3){
             if(currentCableOrder.SequenceEqual(cableOrder)){
                 //go to next phase
-                PhysicalPuzzleManager.instance.SetPhase(3);
                 phase=-1;
+                PhysicalPuzzleManager.instance.SetPhase(3);
             }
             else{
                 foreach(GameObject cable in cables){
@@ -258,9 +259,9 @@ public class TerminalPuzzle : InteractableUseItem
     private void endPhase3(){
         if(currentCodeOrder.SequenceEqual(termCode)){
             //all phases complete
-            PhysicalPuzzleManager.instance.PuzzleEnd();
             phase=2;
             Debug.Log("Puzzle Complete");
+            PhysicalPuzzleManager.instance.PuzzleEnd();
         }
         else if(currentDial>6){
             foreach(GameObject dial in lock_nums){                                
