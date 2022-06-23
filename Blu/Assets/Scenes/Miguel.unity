@@ -4724,7 +4724,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bade43987129a5544b92c1e11cfc9fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagesSprites: []
+  pagesSprites:
+  - {fileID: 21300000, guid: 84c8c5dfddfe9b143a4943c53cc8a648, type: 3}
+  - {fileID: 21300000, guid: c6e3780e1d573eb42b770d292e76bcae, type: 3}
+  - {fileID: 21300000, guid: 7c8882efdf4cd7441bcb3d1f0cb932d8, type: 3}
+  - {fileID: 21300000, guid: f9074fa8690a6d841886bd0459b77b98, type: 3}
   journal: {fileID: 1016313904}
   journalBk: {fileID: 968880492}
   pageDisplay: {fileID: 202823220}
