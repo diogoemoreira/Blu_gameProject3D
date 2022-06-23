@@ -6,7 +6,7 @@ using System.Linq;
 
 public class TerminalPuzzle : InteractableUseItem
 {
-    
+    public GameObject player;
     public GameObject terminalPrefab;
 
     public GameObject front;
@@ -111,6 +111,7 @@ public class TerminalPuzzle : InteractableUseItem
         code_Dict.Add("Lock06",5);
 
         GameStateManager.instance.GSChangeEvent.AddListener(HandleGameStateChange);
+        
     }
 
     // Update is called once per frame
@@ -189,7 +190,10 @@ public class TerminalPuzzle : InteractableUseItem
                                 
                                 goRot.Rotate(0, dialRotation, 0);
                                 //
-                                currentCodeOrder[code_Dict[target.name]] = (int) Mathf.Floor(goRot.rotation.y/dialRotation);
+                                if(currentCodeOrder[code_Dict[target.name]]>=9)
+                                    currentCodeOrder[code_Dict[target.name]]=0;
+                                else
+                                    currentCodeOrder[code_Dict[target.name]]++;
                             }
                         }
 
@@ -215,7 +219,7 @@ public class TerminalPuzzle : InteractableUseItem
         {
             InteractionManager.instance.InteractionPaused(true);
             //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-            terminal = Instantiate(terminalPrefab, playerCamera.transform.forward * -0.5f, Quaternion.identity);
+            player.transform.position = new Vector3(-5.5f, 0.83f,59f);
 
             CameraLockData.setLock(false);
 
@@ -223,7 +227,8 @@ public class TerminalPuzzle : InteractableUseItem
             playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
 
             interacting = true;
-            PhysicalPuzzleManager.instance.InitPuzzle();
+            if(PhysicalPuzzleManager.instance !=null)
+                PhysicalPuzzleManager.instance.InitPuzzle();
         }
     }
 
@@ -231,8 +236,9 @@ public class TerminalPuzzle : InteractableUseItem
         if(screwsRemoved==4){
             //go to next phase
             front.SetActive(false);
-            PhysicalPuzzleManager.instance.SetPhase(2);
             phase=1;
+            if(PhysicalPuzzleManager.instance !=null)
+                PhysicalPuzzleManager.instance.SetPhase(2);
         }
     }
 
@@ -240,8 +246,9 @@ public class TerminalPuzzle : InteractableUseItem
         if(cablesRemoved==3){
             if(currentCableOrder.SequenceEqual(cableOrder)){
                 //go to next phase
-                PhysicalPuzzleManager.instance.SetPhase(3);
                 phase=-1;
+                if(PhysicalPuzzleManager.instance !=null)
+                    PhysicalPuzzleManager.instance.SetPhase(3);
             }
             else{
                 foreach(GameObject cable in cables){
@@ -255,9 +262,10 @@ public class TerminalPuzzle : InteractableUseItem
     private void endPhase3(){
         if(currentCodeOrder.SequenceEqual(termCode)){
             //all phases complete
-            PhysicalPuzzleManager.instance.PuzzleEnd();
             phase=2;
             Debug.Log("Puzzle Complete");
+            if(PhysicalPuzzleManager.instance !=null)
+                PhysicalPuzzleManager.instance.PuzzleEnd();
         }
         else if(currentDial>6){
             foreach(GameObject dial in lock_nums){                                

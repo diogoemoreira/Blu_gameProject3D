@@ -100,6 +100,19 @@ public class Journal : MonoBehaviour
         Time.timeScale = Convert.ToInt32(journalBk.activeInHierarchy);
         journalBk.SetActive(!journalBk.activeInHierarchy);
         Data.setPaused(journalBk.activeInHierarchy);
+
+        if (journalBk.activeInHierarchy)
+        {
+            UIManager.instance.LockInterfaces();
+
+            InteractionManager.instance.InteractionPaused(true);
+        } else
+        {
+            InteractionManager.instance.InteractionPaused(false);
+
+            //unlock interfaces
+            UIManager.instance.UnlockInterfaces();
+        }
     }
 
     public void DisplayPage(int page)

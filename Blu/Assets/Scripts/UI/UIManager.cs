@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
             if (!justChanged) {
                 if (paused) {
                     if (ui != null){
-                        ui.Activate();
+                        ActivateInterface();
                         ui = null;
                         paused = false;
                     }
@@ -67,5 +67,14 @@ public class UIManager : MonoBehaviour
     public bool IsPaused()
     {
         return instance.paused;
+    }
+
+    public void ActivateInterface(){
+        ui.Activate();
+    }
+
+    public void Reset(){
+        ui = null;
+        paused = false;
     }
 }

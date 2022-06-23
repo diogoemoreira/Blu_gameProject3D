@@ -7,17 +7,32 @@ public class PlayerLightDetection : MonoBehaviour
     
     private int mask = 1<<9;
     private GameObject[] plights;
+    private bool canDetect = false;
 
     // Start is called before the first frame update
     void Start()
     {
         plights = GameObject.FindGameObjectsWithTag("Light");
         mask = ~mask;
+        GameStateManager.instance.GSChangeEvent.AddListener(HandleGameStateChange);
+    }
+
+    private void HandleGameStateChange(GameBaseState state)
+    {
+        if (state == GameStateManager.instance.PowerOutState)
+        {
+            canDetect = true;
+        }
+        else
+        {
+            canDetect = false;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!canDetect) { return; }
         //another option is using triggers and calling events
         lightDetected = 0f;
         foreach(GameObject plight in plights){

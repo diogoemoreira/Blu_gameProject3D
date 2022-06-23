@@ -21,9 +21,11 @@ public class PhysicalPuzzleManager : MonoBehaviour
 
     void Start()
     {
-        ard = new SerialPort(com, baudrate);
-        ard.Open();
-        ard.ReadTimeout = 16;
+        try{
+            ard = new SerialPort(com, baudrate);
+            ard.Open();
+            ard.ReadTimeout = 16;
+        }catch(System.Exception){throw;}
     }
 
     // Update is called once per frame

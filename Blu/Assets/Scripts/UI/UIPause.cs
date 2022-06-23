@@ -41,6 +41,7 @@ public class UIPause : MonoBehaviour, UIInterface
     public void ButtonContinue(){
         FadeOut();
         paused = false;
+        UIManager.instance.Reset();
     }
 
     public void ButtonQuit(){
