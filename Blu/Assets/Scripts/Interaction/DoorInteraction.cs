@@ -7,6 +7,9 @@ public class DoorInteraction : InteractableUseItem
     private bool opened = false;
     public bool locked = false;
     public string lockedMessage;
+
+    public AudioSource openDoorSound;
+    public AudioSource closeDoorSound;
     protected override void Execute()
     {
         if (!locked)
@@ -17,12 +20,12 @@ public class DoorInteraction : InteractableUseItem
                 this.gameObject.GetComponent<Animator>().Play("OpenDoor");
                 opened = true;
                 this.gameObject.GetComponent<OcclusionPortal>().open = true;
+                openDoorSound.Play();
             }
             else
             {
                 this.gameObject.GetComponent<Animator>().Play("CloseDoor");
                 opened = false;
-                this.gameObject.GetComponent<OcclusionPortal>().open = false;
             }
         } else
         {
@@ -32,6 +35,15 @@ public class DoorInteraction : InteractableUseItem
 
     public void AnimationOver()
     {
+        if (!opened)
+        {
+            this.gameObject.GetComponent<OcclusionPortal>().open = false;
+        }
         this.StartInteraction();
+    }
+
+    public void PlayCloseSound()
+    {
+        closeDoorSound.Play();
     }
 }
