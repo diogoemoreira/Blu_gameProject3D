@@ -9,5 +9,9 @@ public class TerminalManualInteraction : InteractableUseItem
     protected override void Execute()
     {
         ReadPaper.instance.ShowPaper(manualSprite);
+        if (GameStateManager.instance.currentState == GameStateManager.instance.DoorManualState)
+        {
+            GameStateManager.instance.SwitchState(GameStateManager.instance.TurnOffPowerState);
+        }
     }
 }
