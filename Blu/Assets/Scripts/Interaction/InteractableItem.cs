@@ -28,13 +28,13 @@ public abstract class InteractableItem : MonoBehaviour
         TriggerInteraction();
     }
 
-    protected void StopInteraction()
+    public void StopInteraction()
     {
         canInteract = false;
         InteractionManager.instance.StopDisplayInteractText(this.gameObject);
     }
 
-    protected void StartInteraction()
+    public void StartInteraction()
     {
         canInteract = true;
         if (onColider) {

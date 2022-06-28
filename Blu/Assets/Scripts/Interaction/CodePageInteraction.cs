@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using System.Linq;
 using UnityEngine;
+using System;
 
 public class CodePageInteraction : InteractableUseItem
 {
     private Camera playerCamera;
     public GameObject pagePrefab;
     private GameObject pagina;
+    private string code;
     private void Start()
     {
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        int[] codeOrder = TerminalPuzzle.instance.termCode;
+        string[] result = codeOrder.Select(i => i.ToString()).ToArray();
+        code = String.Join("", result);
+        this.gameObject.GetComponentInChildren<TextMeshPro>().text = code;
     }
 
     private void Update()
@@ -28,8 +35,6 @@ public class CodePageInteraction : InteractableUseItem
 
                 //unlock interfaces
                 UIManager.instance.UnlockInterfaces();
-
-                Destroy(this.gameObject);
             }
         }
     }
@@ -43,8 +48,8 @@ public class CodePageInteraction : InteractableUseItem
 
         InteractionManager.instance.InteractionPaused(true);
         pagina = Instantiate(pagePrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-        pagina.transform.Rotate(0,30,-30);
-        pagina.GetComponentInChildren<TextMeshPro>().text = "123456";
+        pagina.transform.Rotate(0,90,-90);
+        pagina.GetComponentInChildren<TextMeshPro>().text = code;
         playerCamera.GetComponent<MouseLook>().enabled = false;
         playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
     }

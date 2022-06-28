@@ -46,13 +46,13 @@ public class PlayerMovement : MonoBehaviour
                     charControl.center = Vector3.zero;
                     charControl.height = 3f;
                     crouched=false;
-                    this.GetComponentInChildren<Camera>().gameObject.transform.localPosition = new Vector3(0, 0.92f, 0.17f);
+                    this.GetComponentInChildren<Camera>().gameObject.transform.localPosition = new Vector3(0, 0.92f, 0.02f);
                 }
                 else{
                     charControl.center = new Vector3(0, -0.5f, 0);
                     charControl.height = 1.5f;
                     crouched=true;
-                    this.GetComponentInChildren<Camera>().gameObject.transform.localPosition = new Vector3(0, -0.3f, -0.12f);
+                    this.GetComponentInChildren<Camera>().gameObject.transform.localPosition = new Vector3(0, -0.3f, -0.11f);
                 }
             }
 

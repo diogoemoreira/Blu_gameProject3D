@@ -56,6 +56,11 @@ public class TerminalPuzzle : InteractableUseItem
         } else {
             instance = this;
         }
+
+        for (int i = 0; i < 6; i++)
+        {
+            termCode[i] = (int)Mathf.Floor(Random.Range(0, 10));
+        }
     }
     private bool checkState = false;
     private bool canSolvePuzzle = false;
@@ -89,10 +94,6 @@ public class TerminalPuzzle : InteractableUseItem
         System.Random rnd = new System.Random();
         cableOrder = cableOrder.OrderBy(x => rnd.Next()).ToArray();
 
-        /*for(int i=0; i<6; i++){
-            termCode[i] = (int)Mathf.Floor(Random.Range(0,10));
-        }*/
-        termCode = new int[] { 0, 1, 3, 6, 1, 0 };
 
         screw_Dict.Add("1", screws[0]);
         screw_Dict.Add("2", screws[1]);
