@@ -220,7 +220,7 @@ public class TerminalPuzzle : InteractableUseItem
         {
             InteractionManager.instance.InteractionPaused(true);
             //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-            player.transform.position = new Vector3(-5.5f, 0.83f,59f);
+            player.transform.position = new Vector3(-5.5f, 0.83f,3.56f);
 
             CameraLockData.setLock(false);
 
