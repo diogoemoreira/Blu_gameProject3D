@@ -2478,15 +2478,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f43e0b39b8b1544ad4f80ad4bbc508, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.551
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f43e0b39b8b1544ad4f80ad4bbc508, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.712
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f43e0b39b8b1544ad4f80ad4bbc508, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.972
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f43e0b39b8b1544ad4f80ad4bbc508, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11485,8 +11485,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1777708605}
   - component: {fileID: 1777708606}
+  - component: {fileID: 1777708607}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Radiation Suit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11500,7 +11501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777708604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.575, y: 0.713, z: -17.053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11520,7 +11521,21 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5139482, y: 1.2217978, z: 1.3208809}
-  m_Center: {x: 2.5186634, y: 0.67984, z: -16.681059}
+  m_Center: {x: 0, y: 0, z: 0.3}
+--- !u!114 &1777708607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777708604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd9587a91591334ca30126f26c2c91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neeedItem: 0
+  neededItem: 
 --- !u!1 &1779650934
 GameObject:
   m_ObjectHideFlags: 0

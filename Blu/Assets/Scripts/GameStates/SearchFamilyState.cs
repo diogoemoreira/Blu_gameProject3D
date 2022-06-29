@@ -17,7 +17,7 @@ public class SearchFamilyState : GameBaseState
     {
         if (respawned)
         {
-            GameStateManager.instance.SwitchState(GameStateManager.instance.CheckMainDoorState);
+            GameStateManager.instance.SwitchState(GameStateManager.instance.PickUpSuitState);
         }
         if (Time.time > startTime + timeBeforePassOut)
         {

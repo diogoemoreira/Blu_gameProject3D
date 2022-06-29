@@ -35,6 +35,7 @@ public class GameStateManager : MonoBehaviour
     public FindDoorManualState DoorManualState = new FindDoorManualState();
     public EnterMachineRoomState MachineRoomState = new EnterMachineRoomState();
     public TurnOffPowerState TurnOffPowerState = new TurnOffPowerState();
+    public PickUpSuitState PickUpSuitState = new PickUpSuitState();
     void Start()
     {
         currentState = InitialState;
