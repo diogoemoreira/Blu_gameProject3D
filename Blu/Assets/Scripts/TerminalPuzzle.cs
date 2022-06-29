@@ -189,7 +189,7 @@ public class TerminalPuzzle : InteractableUseItem
                                 //rotate the dial
                                 Transform goRot = target.gameObject.transform;
                                 
-                                goRot.Rotate(0, dialRotation, 0);
+                                goRot.Rotate(0, -dialRotation, 0);
                                 //
                                 if(currentCodeOrder[code_Dict[target.name]]>=9)
                                     currentCodeOrder[code_Dict[target.name]]=0;
@@ -220,7 +220,8 @@ public class TerminalPuzzle : InteractableUseItem
         {
             InteractionManager.instance.InteractionPaused(true);
             //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-            player.transform.position = new Vector3(-5.5f, 0.83f,3.56f);
+            player.transform.position = new Vector3(-5.55f, 0.83f,3.56f);
+            player.transform.rotation = Quaternion.Euler(new Vector3(0, -90f, 0));;
 
             CameraLockData.setLock(false);
 

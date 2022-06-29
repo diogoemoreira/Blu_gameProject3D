@@ -31,14 +31,16 @@ public class GameStateManager : MonoBehaviour
     public PowerOutGameState PowerOutState = new PowerOutGameState();
     public CheckBrothersRoomState CheckBrothersState = new CheckBrothersRoomState();
     public SearchFamilyState SearchFamState = new SearchFamilyState();
+    public PickUpSuitState PickUpSuitState = new PickUpSuitState();
     public CheckMainDoorState CheckMainDoorState = new CheckMainDoorState();
     public FindDoorManualState DoorManualState = new FindDoorManualState();
     public EnterMachineRoomState MachineRoomState = new EnterMachineRoomState();
     public TurnOffPowerState TurnOffPowerState = new TurnOffPowerState();
-    public PickUpSuitState PickUpSuitState = new PickUpSuitState();
+    
     void Start()
     {
-        currentState = InitialState;
+        //currentState = InitialState;
+        currentState = MachineRoomState;
 
         currentState.EnterState(this);
         GSChangeEvent.Invoke(currentState);
