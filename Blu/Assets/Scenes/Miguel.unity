@@ -954,13 +954,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2069576959}
     m_Modifications:
+    - target: {fileID: 2737786183394607075, guid: 8562139d722eaa045ad9d415c8139557, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977974536977012213, guid: 8562139d722eaa045ad9d415c8139557, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6977051438901589365, guid: 8562139d722eaa045ad9d415c8139557, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6977051438901589365, guid: 8562139d722eaa045ad9d415c8139557, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.166
+      value: -0.1707
       objectReference: {fileID: 0}
     - target: {fileID: 6977051438901589365, guid: 8562139d722eaa045ad9d415c8139557, type: 3}
       propertyPath: m_LocalPosition.y
