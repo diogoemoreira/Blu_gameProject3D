@@ -29,13 +29,14 @@ public class BedsidetableInteraction : InteractableUseItem
         {
             anim.Play("OpenDrawer");
             closed = false;
-            if (codePage)
-            {
-                codePage.StartInteraction();
-            }
+            
             if (diaryPage)
             {
                 diaryPage.StartInteraction();
+            }
+            else if (codePage)
+            {
+                codePage.StartInteraction();
             }
         } else
         {
@@ -49,6 +50,14 @@ public class BedsidetableInteraction : InteractableUseItem
             {
                 diaryPage.StopInteraction();
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (!closed && diaryPage == null)
+        {
+            codePage.StartInteraction();
         }
     }
 
