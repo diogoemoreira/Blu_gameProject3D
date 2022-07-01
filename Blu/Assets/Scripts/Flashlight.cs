@@ -8,7 +8,7 @@ public class Flashlight : MonoBehaviour
     public float maxBrightness = 1f;
     public float minBrightness = 0.2f;
     public float drainRate = 2;
-    public float noBatteries=10;
+    public float noBatteries=0;
     Light m_light;
 
     public static Flashlight instance;
@@ -77,5 +77,10 @@ public class Flashlight : MonoBehaviour
 
     public bool getFlashlightStatus(){
         return m_light.enabled;
+    }
+
+    public void AddBattery()
+    {
+        noBatteries += 1;
     }
 }
