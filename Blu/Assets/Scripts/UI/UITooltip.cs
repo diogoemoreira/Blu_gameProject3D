@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class UIPause : MonoBehaviour, UIInterface
+public class UITooltip : MonoBehaviour, UIInterface
 {
     public CanvasGroup canvas;
-    public GameObject shade;
 
     private bool paused = false;
 
-    public static UIPause instance {get; private set; }
+    public static UITooltip instance {get; private set; }
 
     private void Start() {
         this.gameObject.SetActive(false);
@@ -36,25 +35,19 @@ public class UIPause : MonoBehaviour, UIInterface
         Time.timeScale = 0;
         CameraLockData.setLock(false);
         Data.setPaused(true);
-        shade.SetActive(true);
     }
 
     public void FadeOut(){
         Time.timeScale = 1;
         CameraLockData.setLock(true);
         Data.setPaused(false);
-        shade.SetActive(false);
         this.gameObject.SetActive(false);
     }
 
-    public void ButtonContinue(){
+    public void ButtonClick(){
         FadeOut();
         paused = false;
         UIManager.instance.Reset();
-    }
-
-    public void ButtonQuit(){
-        Application.Quit();
     }
 
 }

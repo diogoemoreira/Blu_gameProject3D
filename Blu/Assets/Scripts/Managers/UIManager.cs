@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     //
     
     public UIPause pauseUI = null;
+    public UITooltip flashTooltipUI = null;
     bool paused=false;
 
     //control variables
@@ -34,8 +35,7 @@ public class UIManager : MonoBehaviour
                 if (paused) {
                     if (ui != null){
                         ActivateInterface();
-                        ui = null;
-                        paused = false;
+                        Reset();
                     }
                 }
                 else {
@@ -52,6 +52,12 @@ public class UIManager : MonoBehaviour
         pauseUI.Activate();
         paused= true;
         ui = (UIInterface) pauseUI;
+    }
+
+    public void uiKeyDown(UIInterface ui_if){
+        pauseUI.Activate();
+        paused= true;
+        ui = ui_if;
     }
 
     public void LockInterfaces(){

@@ -27,6 +27,12 @@ public class PowerOutGameState : GameBaseState
             doorsToOpen[i].GetComponent<DoorInteraction>().locked = false;
         }
 
+        //flashlight now usable
+        Flashlight.instance.gameObject.SetActive(true);
+        
+        UIManager.instance.uiKeyDown(UITooltip.instance);
+        //
+
         SubtitlesManager.instance.DisplaySubtitles("Ok, so whats next? Hmmm, yes open the door terminal.");
         Journal.instance.SetCurrentTask("- Open the bunker door.");
     }
