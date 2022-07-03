@@ -21,8 +21,7 @@ public class UITooltip : MonoBehaviour, UIInterface
     public void Activate()
     {
         if(Data.getPaused() && paused){
-            FadeOut();
-            paused = false;
+            ButtonClick();
         }
         else if(!Data.getPaused()){
             FadeIn();
@@ -45,9 +44,9 @@ public class UITooltip : MonoBehaviour, UIInterface
     }
 
     public void ButtonClick(){
-        FadeOut();
         paused = false;
         UIManager.instance.Reset();
+        FadeOut();
     }
 
 }
