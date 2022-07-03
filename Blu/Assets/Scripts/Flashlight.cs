@@ -11,6 +11,8 @@ public class Flashlight : MonoBehaviour
     public float noBatteries=0;
     Light m_light;
 
+    bool usable = false;
+
     public static Flashlight instance;
     private void Awake()
     {
@@ -33,23 +35,26 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(drainOverTime && m_light.enabled){
-            
-            if(m_light.intensity > minBrightness){
-                ChangeLightIntensity(m_light.intensity - Time.deltaTime *(drainRate/1000));
+        if(usable){
+            if(drainOverTime && m_light.enabled){
+                
+                if(m_light.intensity > minBrightness){
+                    ChangeLightIntensity(m_light.intensity - Time.deltaTime *(drainRate/1000));
+                }
+            }
+
+            if(Input.GetKeyDown(KeyCode.F)){
+                changeFlashlightStatus();
+            }
+
+            if(Input.GetKeyDown(KeyCode.R) && noBatteries>0){
+                ReplaceBattery();
+            }
+            if(m_light.intensity<=minBrightness+0.1f){
+                changeFlashlightStatus(false);
             }
         }
-
-        if(Input.GetKeyDown(KeyCode.F)){
-            changeFlashlightStatus();
-        }
-
-        if(Input.GetKeyDown(KeyCode.R) && noBatteries>0){
-            ReplaceBattery();
-        }
-        if(m_light.intensity<=minBrightness+0.1f){
-            changeFlashlightStatus(false);
-        }
+        
         
     }
 
@@ -82,5 +87,9 @@ public class Flashlight : MonoBehaviour
     public void AddBattery()
     {
         noBatteries += 1;
+    }
+
+    public void flashUsable(){
+        usable=true;
     }
 }

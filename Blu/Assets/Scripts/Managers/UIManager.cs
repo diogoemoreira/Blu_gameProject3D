@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void uiKeyDown(UIInterface ui_if){
-        pauseUI.Activate();
+        ui_if.Activate();
         paused= true;
         ui = ui_if;
     }
