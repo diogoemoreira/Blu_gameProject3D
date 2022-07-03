@@ -26,6 +26,8 @@ public class InitialGameState : GameBaseState
         Journal.instance.SetCurrentTask("- Check the task board in the living room.");
         SubtitlesManager.instance.DisplaySubtitles("I don't know which tasks i have to do today.");
         SubtitlesManager.instance.DisplaySubtitles("I need to go to the living room to check the task board.");
+
+        UIManager.instance.uiKeyDown(UIManager.instance.journalTooltipUI);
     }
     public override void UpdateState(GameStateManager gameState)
     {

@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     
     public UIPause pauseUI = null;
     public UITooltip flashTooltipUI = null;
+    public UITooltip journalTooltipUI = null;
+    public UITooltip heartbeatTooltipUI = null;
     bool paused=false;
 
     //control variables

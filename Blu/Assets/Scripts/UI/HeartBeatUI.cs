@@ -29,6 +29,8 @@ public class HeartBeatUI : MonoBehaviour
     private void Start()
     {
         rate = 20f;
+
+        this.gameObject.SetActive(false);
     }
 
     private void Update()

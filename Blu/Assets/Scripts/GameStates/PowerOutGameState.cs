@@ -33,7 +33,7 @@ public class PowerOutGameState : GameBaseState
         //flashlight now usable
         Flashlight.instance.flashUsable();
         
-        UIManager.instance.uiKeyDown(UITooltip.instance);
+        UIManager.instance.uiKeyDown(UIManager.instance.flashTooltipUI);
         //
     }
     public override void UpdateState(GameStateManager gameState)

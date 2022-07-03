@@ -6,17 +6,8 @@ public class UITooltip : MonoBehaviour, UIInterface
 
     private bool paused = false;
 
-    public static UITooltip instance {get; private set; }
-
     private void Start() {
         this.gameObject.SetActive(false);
-
-        if(instance != null && instance != this){
-            Destroy(this);
-        }
-        else{
-            instance = this;
-        }
     }
     public void Activate()
     {
