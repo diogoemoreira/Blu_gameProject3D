@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck; //center of the ground check sphere
     public float groundDistance = 0.4f; //radius of the sphere which will check if we are on the ground
     public LayerMask groundMask; //to control what objects the sphere should check for
+    public Animator camAnim;
     
     public bool onGround=true;    
     private bool crouched = false;
@@ -73,6 +74,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     anim.Play("WalkBlu");
                 }
+                if(camAnim.GetBool("fade"))
+                    camAnim.Play("CameraWalking");
             }
             else
             {
@@ -84,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     anim.Play("IdleBlu");
                 }
+                if(camAnim.GetBool("fade"))
+                    camAnim.Play("CameraIdle");
             }
         }
        
