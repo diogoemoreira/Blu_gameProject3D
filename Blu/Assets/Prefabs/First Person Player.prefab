@@ -486,6 +486,7 @@ MonoBehaviour:
   minHeartRate: 85
   maxHeartRate: 180
   multiplier: 0
+  playerCamera: {fileID: 0}
   respawnEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -677,7 +678,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088678914169633133}
-  m_LocalRotation: {x: 0.8475249, y: -0.17067674, z: 0.02727127, w: 0.501824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.9200001, z: 0.16999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -687,7 +688,7 @@ Transform:
   - {fileID: 1906970704}
   m_Father: {fileID: 4705228651267251063}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 118.74, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1088678914169633135
 Camera:
   m_ObjectHideFlags: 0
