@@ -15,4 +15,9 @@ public class camAnimController : MonoBehaviour
         GameObject cam = GameObject.Find("CameraAnim");
         cam.GetComponent<Animator>().SetBool("fade", true);
     }
+
+    public void FadedOut()
+    {
+        HeartRateManager.instance.FadedOut();
+    }
 }
