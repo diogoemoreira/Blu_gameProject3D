@@ -16,6 +16,7 @@ public class HeartRateManager : MonoBehaviour
     private bool canUpdateLight = true;
 
     private CharacterController charController;
+    public GameObject playerCamera;
 
     public UnityEvent respawnEvent;
 
@@ -73,10 +74,7 @@ public class HeartRateManager : MonoBehaviour
             if (currentHeartRate > maxHeartRate)
             {
                 charController.enabled = false;
-                this.transform.position = SafeZoneManager.instance.GetLastSafeZone();
-                charController.enabled = true;
-                currentHeartRate = minHeartRate;
-                respawnEvent.Invoke();
+                playerCamera.gameObject.GetComponent<Animator>().Play("CameraFadeOut");
             }
 
             HeartBeatUI.instance.UpdateHeartBeat(currentHeartRate);
@@ -90,5 +88,14 @@ public class HeartRateManager : MonoBehaviour
                 multiplier = -5;
             }
         }
+    }
+
+    public void FadedOut()
+    {
+        this.transform.position = SafeZoneManager.instance.GetLastSafeZone();
+        charController.enabled = true;
+        currentHeartRate = minHeartRate;
+        respawnEvent.Invoke();
+        playerCamera.gameObject.GetComponent<Animator>().Play("CameraFadeIn");
     }
 }

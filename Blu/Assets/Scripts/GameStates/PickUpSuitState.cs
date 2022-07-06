@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PickUpSuitState : GameBaseState
 {
+
     public override void EnterState(GameStateManager gameState)
     {
-        Journal.instance.SetCurrentTask("- Pick up your radiation suit on your room.");
-        SubtitlesManager.instance.DisplaySubtitles("They probably left. I need to go after them!");
+        GameObject cam = GameObject.Find("CameraAnim");
+        cam.GetComponent<Animator>().SetBool("fade", false);
+        cam.GetComponent<Animator>().Play("CameraFadeIn");
 
-
-        HeartBeatUI.instance.gameObject.SetActive(true);
-        UIManager.instance.uiKeyDown(UIManager.instance.heartbeatTooltipUI);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled=false;
     }
+
     public override void UpdateState(GameStateManager gameState)
     {
         

@@ -1,0 +1,1441 @@
+fileFormatVersion: 2
+guid: 0083dde3ebb2c6d4eb87f5383d1b29ce
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: ControlRoom_Com_Texturas01(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Candeeiro
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0.21990831, y: 0.40703803, z: 1.2913654}
+      rotation: {x: -0.63741225, y: -0.24970865, z: -0.23012343, w: 0.69166064}
+      scale: {x: -0.038103677, y: -0.03810368, z: -0.038103685}
+    - name: Mesa
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.001
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.002
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.003
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.004
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.005
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.006
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.007
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.008
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.009
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.010
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.011
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.012
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.013
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.014
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.015
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.016
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.017
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.018
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.019
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.020
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.021
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.022
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.023
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.024
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.025
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.026
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.027
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.028
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.029
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.030
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.031
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.032
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.033
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.034
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.035
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.036
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.037
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.038
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.039
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.040
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.041
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.042
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.043
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.044
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.045
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.046
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.047
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.048
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.049
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.050
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.051
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.052
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.053
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.054
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.055
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.056
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.057
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.058
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.059
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.060
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.061
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.062
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.063
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.064
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.065
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.066
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.067
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.068
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.069
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.070
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.071
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.072
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.073
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.074
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.075
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.076
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.077
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.078
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.079
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.080
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.081
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.082
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.083
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.084
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.085
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.086
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.087
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.088
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.089
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.090
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.091
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.092
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.093
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.094
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.095
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.096
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.097
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.098
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.099
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.100
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.101
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.102
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.103
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.104
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.105
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.106
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.107
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.108
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.109
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.110
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.111
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.112
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.113
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.114
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.115
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.116
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.117
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.118
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.119
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.120
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.121
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.122
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.123
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.124
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.125
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.126
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.127
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.128
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.129
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.130
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.131
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.132
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.133
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.134
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.135
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.136
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.137
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.138
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.139
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.140
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.141
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.142
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.143
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.144
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.145
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.146
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.147
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.148
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.149
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.150
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.151
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.152
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.153
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.154
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.155
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.156
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.157
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.158
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.159
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.160
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.161
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.162
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.163
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.164
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.165
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.166
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.167
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.168
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.169
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.170
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.171
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.172
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.173
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.174
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.175
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.176
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.177
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.178
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.179
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.180
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.181
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.182
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.183
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.184
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.185
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.186
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.187
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.188
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.189
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.190
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.191
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.192
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.193
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.194
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.195
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.196
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.197
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.198
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.199
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.200
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.201
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.202
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.203
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.204
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.205
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.206
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.207
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.208
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.209
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.210
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.211
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.212
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.213
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.214
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.215
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.216
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.217
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.218
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.219
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.220
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.221
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.222
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.223
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.224
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.225
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.226
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.227
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.228
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.229
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.230
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.231
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.232
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.233
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.234
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.235
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.236
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.237
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.238
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.239
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.240
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.241
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.242
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.243
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.244
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.245
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.246
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.247
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.248
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.249
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.250
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.251
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.252
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.253
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.254
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.255
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.256
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.257
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.258
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.259
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.260
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.261
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.262
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.263
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    - name: Mesa.264
+      parentName: ControlRoom_Com_Texturas01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.15720594, y: 0.15720594, z: 0.15720594}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

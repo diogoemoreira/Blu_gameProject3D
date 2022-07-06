@@ -40,7 +40,7 @@ public class GameStateManager : MonoBehaviour
     void Start()
     {
         currentState = InitialState;
-        //currentState = MachineRoomState; //for testing
+        //currentState = SearchFamState; //for testing
 
         currentState.EnterState(this);
         GSChangeEvent.Invoke(currentState);

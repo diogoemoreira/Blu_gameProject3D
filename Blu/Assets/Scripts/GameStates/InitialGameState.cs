@@ -28,6 +28,17 @@ public class InitialGameState : GameBaseState
         SubtitlesManager.instance.DisplaySubtitles("I need to go to the living room to check the task board.");
 
         UIManager.instance.uiKeyDown(UIManager.instance.journalTooltipUI);
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled=false;
+
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+
+        p.GetComponent<Animator>().Play("StandingUp");
+
+        GameObject cam = GameObject.Find("CameraAnim");
+        cam.GetComponent<Animator>().SetBool("fade", false);
+
+        cam.GetComponent<Animator>().Play("CameraStandingUp");
     }
     public override void UpdateState(GameStateManager gameState)
     {
