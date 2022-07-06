@@ -23,7 +23,7 @@ public class DiaryPageInteraction : InteractableUseItem
                 Destroy(pagina);
                 pagina = null;
                 playerCamera.GetComponent<MouseLook>().enabled = true;
-                playerCamera.transform.parent.GetComponent<CharacterController>().enabled = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = true;
                 InteractionManager.instance.StopDisplayInteractText(this.gameObject);
                 InteractionManager.instance.InteractionPaused(false);
 
@@ -48,6 +48,6 @@ public class DiaryPageInteraction : InteractableUseItem
         pagina.transform.Rotate(90,180,0);
         pagina.GetComponent<MeshRenderer>().material = material;
         playerCamera.GetComponent<MouseLook>().enabled = false;
-        playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
     }
 }
