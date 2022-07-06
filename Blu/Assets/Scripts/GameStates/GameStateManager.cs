@@ -39,8 +39,8 @@ public class GameStateManager : MonoBehaviour
     
     void Start()
     {
-        currentState = InitialState;
-        //currentState = SearchFamState; //for testing
+        //currentState = InitialState;
+        currentState = TurnOffPowerState; //for testing
 
         currentState.EnterState(this);
         GSChangeEvent.Invoke(currentState);

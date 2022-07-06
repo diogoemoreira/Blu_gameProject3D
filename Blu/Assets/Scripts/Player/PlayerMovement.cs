@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
                 if(crouched){
                     charControl.center = Vector3.zero;
                     charControl.height = 3f;
+                    
                     camAnim.Play("Uncrouch");
                     crouched=false;
                 }
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
                     charControl.center = new Vector3(0, -0.5f, 0);
                     charControl.height = 1.5f;
                     crouched=true;
+                    
                     camAnim.Play("Crouch");
                 }
             }
@@ -73,8 +75,10 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     anim.Play("WalkBlu");
-                    if(camAnim.GetBool("fade") && !camAnim.GetBool("crouching"))
+                    if(camAnim.GetBool("fade") && !camAnim.GetBool("crouching")){
+                        
                         camAnim.Play("CameraWalking");
+                    }
                 }
             }
             else
@@ -86,8 +90,9 @@ public class PlayerMovement : MonoBehaviour
                 } else
                 {
                     anim.Play("IdleBlu");
-                    if(camAnim.GetBool("fade") && !camAnim.GetBool("crouching"))
+                    if(camAnim.GetBool("fade") && !camAnim.GetBool("crouching")){
                         camAnim.Play("CameraIdle");
+                    }
                 }
             }
         }

@@ -6,8 +6,10 @@ public class VideoCredits : MonoBehaviour
 {
     public static VideoCredits instance;
     public VideoPlayer videoPlayer;
-    public GameObject main_menu;
-    public GameObject credits_menu;
+    public GameObject mainMenu;
+    public GameObject creditsMenu;
+
+    private bool videoStarted=false;
 
     private void Awake() {
         if(instance==null){
@@ -21,6 +23,11 @@ public class VideoCredits : MonoBehaviour
             endVideo();
         }
 
+        if (!videoStarted && videoPlayer.isPlaying == true) {
+            mainMenu.SetActive(false);
+            videoStarted=true;
+        }
+
         if (videoPlayer.isPlaying == false) {
             if (videoPlayer.time != 0) {
                 //if the video is not playing and it already started
@@ -30,9 +37,11 @@ public class VideoCredits : MonoBehaviour
         }
     }
 
+    
+
     private void endVideo(){
-        main_menu.SetActive(true);
-        credits_menu.SetActive(false);
+        mainMenu.SetActive(true);
+        creditsMenu.SetActive(false);
     }  
     
 }

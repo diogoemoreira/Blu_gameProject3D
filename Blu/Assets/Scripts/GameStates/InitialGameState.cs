@@ -29,16 +29,19 @@ public class InitialGameState : GameBaseState
 
         UIManager.instance.uiKeyDown(UIManager.instance.journalTooltipUI);
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled=false;
-
         GameObject p = GameObject.FindGameObjectWithTag("Player");
+
+        p.GetComponent<CharacterController>().enabled=false;
 
         p.GetComponent<Animator>().Play("StandingUp");
 
-        GameObject cam = GameObject.Find("CameraAnim");
-        cam.GetComponent<Animator>().SetBool("fade", false);
+        GameObject cam = GameObject.FindGameObjectWithTag("CameraAnim");
+        Animator camAnim = cam.GetComponent<Animator>();
+   
 
-        cam.GetComponent<Animator>().Play("CameraStandingUp");
+        camAnim.SetBool("fade", false);
+
+        camAnim.Play("CameraStandingUp");
     }
     public override void UpdateState(GameStateManager gameState)
     {

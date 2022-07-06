@@ -5,12 +5,10 @@ using UnityEngine;
 public class camAnimController : MonoBehaviour
 {
     private GameObject camParent;
-    private GameObject cam;
     private Animator camAnim;
 
     private void Awake() {
-        camParent = GameObject.Find("CameraAnim");
-        cam = GetComponentInChildren<Camera>().gameObject;
+        camParent = GameObject.FindGameObjectWithTag("CameraAnim");
         camAnim = camParent.GetComponent<Animator>();
     }
 

@@ -6,6 +6,9 @@ public class VideoIntro : MonoBehaviour
 {
     public static VideoIntro instance;
     public VideoPlayer videoPlayer;
+    public GameObject mainMenu;
+    
+    private bool videoStarted=false;
 
     private void Awake() {
         if(instance==null){
@@ -17,6 +20,11 @@ public class VideoIntro : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)){
             //if the user presses the "E" key he will skip the video
             nextScene();
+        }
+
+        if (!videoStarted && videoPlayer.isPlaying == true) {
+            mainMenu.SetActive(false);
+            videoStarted=true;
         }
 
         if (videoPlayer.isPlaying == false) {

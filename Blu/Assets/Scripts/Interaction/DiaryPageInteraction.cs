@@ -8,22 +8,24 @@ public class DiaryPageInteraction : InteractableUseItem
     public GameObject pagePrefab;
     private GameObject pagina;
     public Material material;
+    private bool skipFrame;
     private void Start()
     {
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         this.gameObject.GetComponent<MeshRenderer>().material = material;
+        skipFrame = false;
     }
 
     private void Update()
     {
-        if (pagina != null)
+        if (pagina != null && !skipFrame)
         {
-            if (Input.GetButtonDown("Cancel"))
+            if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Interact"))
             {
                 Destroy(pagina);
                 pagina = null;
                 playerCamera.GetComponent<MouseLook>().enabled = true;
-                playerCamera.transform.parent.GetComponent<CharacterController>().enabled = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = true;
                 InteractionManager.instance.StopDisplayInteractText(this.gameObject);
                 InteractionManager.instance.InteractionPaused(false);
 
@@ -34,20 +36,22 @@ public class DiaryPageInteraction : InteractableUseItem
                 Destroy(this.gameObject);
             }
         }
+        skipFrame = false;
     }
 
     protected override void Execute()
     {
         if (pagina != null) { return; }
 
+        skipFrame = true;
         //lock interfaces
         UIManager.instance.LockInterfaces();
 
         InteractionManager.instance.InteractionPaused(true);
-        pagina = Instantiate(pagePrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-        pagina.transform.Rotate(90,180,0);
+        pagina = Instantiate(pagePrefab, (playerCamera.transform.position + playerCamera.transform.forward * 0.6f) + new Vector3(0.0f,0.35f,0.0f), playerCamera.transform.rotation);
+        pagina.transform.Rotate(125,180,0);
         pagina.GetComponent<MeshRenderer>().material = material;
         playerCamera.GetComponent<MouseLook>().enabled = false;
-        playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
     }
 }
