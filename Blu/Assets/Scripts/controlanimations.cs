@@ -25,7 +25,7 @@ public class controlanimations : MonoBehaviour
     {
 
         this.GetComponent<Animator>().Play("botoesmexer");
-
+        print("---- CLicou!");
     }
 
     public void OnMouseUp()
