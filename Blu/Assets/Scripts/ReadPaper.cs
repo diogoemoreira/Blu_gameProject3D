@@ -26,7 +26,6 @@ public class ReadPaper : MonoBehaviour
         screen.SetActive(false);
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
-
     public void ShowPaper(Sprite sprite)
     {
         UIManager.instance.LockInterfaces();
