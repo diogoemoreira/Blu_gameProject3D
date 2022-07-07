@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class animacaoalavanca : InteractableUseItem{
+public class AnimacaoAlavanca : InteractableUseItem{
 
     private string[] anims = new string[]{"movealavanca","botoesmexer", "2movebuttons"};
     private int curr_anim=0;

@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charControl: {fileID: 1088678912944988268}
-  speed: 3
+  speed: 2.5
   gravity: -0.5
   jumpHeight: 0.5
   groundCheck: {fileID: 1088678913183303904}

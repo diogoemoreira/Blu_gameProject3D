@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camAnimController : MonoBehaviour
+public class CamAnimController : MonoBehaviour
 {
     private GameObject camParent;
     private Animator camAnim;
