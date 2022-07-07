@@ -52,5 +52,7 @@ public class CamAnimController : MonoBehaviour
 
         videoCredits.SetActive(true);
         camAnim.Play("finalFadeOut");
+
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().GetComponent<MouseLook>().enabled = false;
     }
 }
