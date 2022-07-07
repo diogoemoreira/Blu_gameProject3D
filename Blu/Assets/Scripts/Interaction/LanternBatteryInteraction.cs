@@ -9,6 +9,7 @@ public class LanternBatteryInteraction : InteractableUseItem
     {
         this.StopInteraction();
         Flashlight.instance.AddBattery();
+        PickUpItemToolTip.instance.ShowToolTip("Battery");
         Destroy(this.gameObject);
     }
 }
