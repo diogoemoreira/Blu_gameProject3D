@@ -3971,6 +3971,7 @@ MonoBehaviour:
   neeedItem: 0
   neededItem: 
   manualSprite: {fileID: 21300000, guid: ad267e20e19e74747b878c1edc785764, type: 3}
+  manual_text: {fileID: 1169478742}
 --- !u!1 &512156337
 GameObject:
   m_ObjectHideFlags: 0

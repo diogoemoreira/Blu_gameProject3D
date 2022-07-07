@@ -406,4 +406,8 @@ public class TerminalPuzzle : InteractableUseItem
 
         endPhase3();
     }
+
+    public int[] GetCableOrder(){
+        return this.cableOrder;
+    }
 }
