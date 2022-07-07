@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CamAnimController : MonoBehaviour
 {
+    public GameObject videoCredits;
     private GameObject camParent;
     private Animator camAnim;
 
@@ -41,5 +42,15 @@ public class CamAnimController : MonoBehaviour
 
     public void NotCrouching(){
         camAnim.SetBool("crouching", false);
+    }
+
+    public void FinalFadeInDone(){
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+
+        p.GetComponent<CharacterController>().enabled=false;
+        CameraLockData.setLock(false);
+
+        videoCredits.SetActive(true);
+        camAnim.Play("finalFadeOut");
     }
 }

@@ -6,7 +6,7 @@ public class PickUpSuitState : GameBaseState
 
     public override void EnterState(GameStateManager gameState)
     {
-        GameObject cam = GameObject.Find("CameraAnim");
+        GameObject cam = GameObject.FindGameObjectWithTag("CameraAnim");
         Animator camAnim = cam.GetComponent<Animator>();
 
 

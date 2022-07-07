@@ -17,6 +17,8 @@ public class TerminalPuzzle : InteractableUseItem
 
     public GameObject[] lock_nums = new GameObject[6];
 
+    public Animator doorAnim=null;
+
     private Camera playerCamera;
 
     //define phases
@@ -266,6 +268,9 @@ public class TerminalPuzzle : InteractableUseItem
             //all phases complete
             phase=2;
             Debug.Log("Puzzle Complete");
+            doorAnim.Play("OpenDoor");
+            Animator camAnim = GameObject.FindGameObjectWithTag("CameraAnim").GetComponent<Animator>();
+            camAnim.Play("FinalFadeIn");
             if(PhysicalPuzzleManager.instance !=null)
                 PhysicalPuzzleManager.instance.PuzzleEnd();
         }
