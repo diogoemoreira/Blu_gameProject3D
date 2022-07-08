@@ -39,8 +39,7 @@ public class GameStateManager : MonoBehaviour
     
     void Start()
     {
-        //currentState = InitialState;
-        currentState = PowerOutState; //for testing
+        currentState = InitialState;
 
         currentState.EnterState(this);
         GSChangeEvent.Invoke(currentState);
