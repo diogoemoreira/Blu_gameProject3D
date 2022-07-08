@@ -219,9 +219,13 @@ public class TerminalPuzzle : InteractableUseItem
         }
         if (canSolvePuzzle)
         {
+            player.GetComponent<Animator>().Play("IdleBlu");
+            player.GetComponent<AudioSource>().Stop();
+            GameObject.FindGameObjectWithTag("CameraAnim").GetComponent<Animator>().Play("CameraIdle");
             InteractionManager.instance.InteractionPaused(true);
             //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-            player.transform.position = new Vector3(-5.55f, 0.83f,3.56f);
+            
+            player.transform.position = new Vector3(-5.85f,0.83f,3.60f);
             player.transform.rotation = Quaternion.Euler(new Vector3(0, -90f, 0));;
 
             CameraLockData.setLock(false);

@@ -461,7 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charControl: {fileID: 1088678912944988268}
   speed: 2.5
-  gravity: -0.5
+  gravity: -0.45
   jumpHeight: 0.5
   groundCheck: {fileID: 1088678913183303904}
   groundDistance: 0.4
@@ -2786,6 +2786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39aea61b54b6a5344844f01643eb0814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoCredits: {fileID: 0}
 --- !u!1 &6791313259909342088
 GameObject:
   m_ObjectHideFlags: 0
