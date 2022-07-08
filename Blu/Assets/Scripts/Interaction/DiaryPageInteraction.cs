@@ -48,8 +48,8 @@ public class DiaryPageInteraction : InteractableUseItem
         UIManager.instance.LockInterfaces();
 
         InteractionManager.instance.InteractionPaused(true);
-        pagina = Instantiate(pagePrefab, (playerCamera.transform.position + playerCamera.transform.forward * 0.6f) + new Vector3(0.0f,0.35f,0.0f), playerCamera.transform.rotation);
-        pagina.transform.Rotate(125,180,0);
+        pagina = Instantiate(pagePrefab, (playerCamera.transform.position + playerCamera.transform.forward * 0.6f) + new Vector3(0.0f,0.45f,0.0f), playerCamera.transform.rotation);
+        pagina.transform.Rotate(135,180,0);
         pagina.GetComponent<MeshRenderer>().material = material;
         playerCamera.GetComponent<MouseLook>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;

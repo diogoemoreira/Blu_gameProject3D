@@ -1510,6 +1510,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 532258668}
+    - target: {fileID: 6977051438901589367, guid: 8562139d722eaa045ad9d415c8139557, type: 3}
+      propertyPath: doorAnim
+      value: 
+      objectReference: {fileID: 2069576965}
     - target: {fileID: 7053670829648874120, guid: 8562139d722eaa045ad9d415c8139557, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3916,11 +3920,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8659d6af0bfaedd42ae2ac68fd06e043, type: 3}
-    m_FontSize: 32
+    m_FontSize: 48
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 18
+    m_MaxSize: 48
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4203,7 +4207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 532372125}
-  mainMenu: {fileID: 0}
+  mainMenu: {fileID: 1771358692}
   creditsMenu: {fileID: 2016714121}
   backToMainMenu: 0
 --- !u!328 &532372125
@@ -11918,7 +11922,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -22, y: 22}
-  m_SizeDelta: {x: 680, y: 120}
+  m_SizeDelta: {x: 580, y: 120}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1614652005
 MonoBehaviour:
@@ -11933,7 +11937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
+  m_Color: {r: 0.70980394, g: 0.8, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16323,6 +16327,11 @@ Transform:
 --- !u!4 &2069576959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135199588587741060, guid: cccb2bbe230d1eb40bce7b55b9173d9b, type: 3}
+  m_PrefabInstance: {fileID: 2069576957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2069576965 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6731413525220056338, guid: cccb2bbe230d1eb40bce7b55b9173d9b, type: 3}
   m_PrefabInstance: {fileID: 2069576957}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2078997509

@@ -7,6 +7,7 @@ using System.Linq;
 public class TerminalPuzzle : InteractableUseItem
 {
     public GameObject player;
+    public Animator doorAnim=null;
     public GameObject terminalPrefab;
 
     public GameObject front;
@@ -16,8 +17,6 @@ public class TerminalPuzzle : InteractableUseItem
     public GameObject[] cables = new GameObject[3];
 
     public GameObject[] lock_nums = new GameObject[6];
-
-    public Animator doorAnim=null;
 
     private Camera playerCamera;
 
