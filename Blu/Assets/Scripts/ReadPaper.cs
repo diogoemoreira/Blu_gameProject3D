@@ -26,11 +26,11 @@ public class ReadPaper : MonoBehaviour
         screen.SetActive(false);
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
-    public void ShowPaper(Sprite sprite)
+    public void ShowPaper(string m_text)
     {
         UIManager.instance.LockInterfaces();
         InteractionManager.instance.InteractionPaused(true);
-        content.GetComponent<Image>().sprite = sprite;
+        content.GetComponent<Text>().text = m_text;
         screen.SetActive(true);
         CameraLockData.setLock(false);
         Data.setPaused(true);

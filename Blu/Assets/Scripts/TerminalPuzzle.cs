@@ -129,7 +129,7 @@ public class TerminalPuzzle : InteractableUseItem
                 interacting=false;
 
                 playerCamera.GetComponent<MouseLook>().enabled = true;
-                playerCamera.transform.parent.GetComponent<CharacterController>().enabled = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = true;
                 InteractionManager.instance.StopDisplayInteractText(this.gameObject);
                 InteractionManager.instance.InteractionPaused(false);
 
@@ -228,7 +228,7 @@ public class TerminalPuzzle : InteractableUseItem
             CameraLockData.setLock(false);
 
             playerCamera.GetComponent<MouseLook>().enabled = false;
-            playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
 
             interacting = true;
             if(PhysicalPuzzleManager.instance !=null)
