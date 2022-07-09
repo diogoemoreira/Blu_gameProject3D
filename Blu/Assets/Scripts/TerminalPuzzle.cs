@@ -7,6 +7,7 @@ using System.Linq;
 public class TerminalPuzzle : InteractableUseItem
 {
     public GameObject player;
+    public Animator doorAnim=null;
     public GameObject terminalPrefab;
 
     public GameObject front;
@@ -16,8 +17,6 @@ public class TerminalPuzzle : InteractableUseItem
     public GameObject[] cables = new GameObject[3];
 
     public GameObject[] lock_nums = new GameObject[6];
-
-    public Animator doorAnim=null;
 
     private Camera playerCamera;
 
@@ -129,7 +128,7 @@ public class TerminalPuzzle : InteractableUseItem
                 interacting=false;
 
                 playerCamera.GetComponent<MouseLook>().enabled = true;
-                playerCamera.transform.parent.GetComponent<CharacterController>().enabled = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = true;
                 InteractionManager.instance.StopDisplayInteractText(this.gameObject);
                 InteractionManager.instance.InteractionPaused(false);
 
@@ -220,15 +219,19 @@ public class TerminalPuzzle : InteractableUseItem
         }
         if (canSolvePuzzle)
         {
+            player.GetComponent<Animator>().Play("IdleBlu");
+            player.GetComponent<AudioSource>().Stop();
+            GameObject.FindGameObjectWithTag("CameraAnim").GetComponent<Animator>().Play("CameraIdle");
             InteractionManager.instance.InteractionPaused(true);
             //terminal = Instantiate(terminalPrefab, playerCamera.transform.position + playerCamera.transform.forward * 0.5f, playerCamera.transform.rotation);
-            player.transform.position = new Vector3(-5.55f, 0.83f,3.56f);
+            
+            player.transform.position = new Vector3(-5.85f,0.83f,3.60f);
             player.transform.rotation = Quaternion.Euler(new Vector3(0, -90f, 0));;
 
             CameraLockData.setLock(false);
 
             playerCamera.GetComponent<MouseLook>().enabled = false;
-            playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
 
             interacting = true;
             if(PhysicalPuzzleManager.instance !=null)
@@ -405,5 +408,9 @@ public class TerminalPuzzle : InteractableUseItem
         currentDial++;
 
         endPhase3();
+    }
+
+    public int[] GetCableOrder(){
+        return this.cableOrder;
     }
 }

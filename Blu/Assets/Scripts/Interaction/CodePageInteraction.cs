@@ -29,7 +29,7 @@ public class CodePageInteraction : InteractableUseItem
                 Destroy(pagina);
                 pagina = null;
                 playerCamera.GetComponent<MouseLook>().enabled = true;
-                playerCamera.transform.parent.GetComponent<CharacterController>().enabled = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = true;
                 InteractionManager.instance.StopDisplayInteractText(this.gameObject);
                 InteractionManager.instance.InteractionPaused(false);
 
@@ -51,6 +51,6 @@ public class CodePageInteraction : InteractableUseItem
         pagina.transform.Rotate(0,90,-90);
         pagina.GetComponentInChildren<TextMeshPro>().text = code;
         playerCamera.GetComponent<MouseLook>().enabled = false;
-        playerCamera.transform.parent.GetComponent<CharacterController>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().enabled = false;
     }
 }

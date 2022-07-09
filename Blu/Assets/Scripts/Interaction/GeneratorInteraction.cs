@@ -22,6 +22,6 @@ public class GeneratorInteraction : InteractableUseItem
 
     protected override void Execute()
     {
-        GameStateManager.instance.SwitchState(GameStateManager.instance.PowerOutState);
+        //GameStateManager.instance.SwitchState(GameStateManager.instance.PowerOutState);
     }
 }
