@@ -38,7 +38,7 @@ public class BedsidetableInteraction : InteractableUseItem
             {
                 codePage.StartInteraction();
             }
-        } else
+        } /*else
         {
             anim.Play("CloseDrawer");
             closed = true;
@@ -50,7 +50,7 @@ public class BedsidetableInteraction : InteractableUseItem
             {
                 diaryPage.StopInteraction();
             }
-        }
+        }*/
     }
 
     private void Update()
@@ -63,6 +63,6 @@ public class BedsidetableInteraction : InteractableUseItem
 
     public void AnimationOver()
     {
-        this.StartInteraction();
+        //this.StartInteraction();
     }
 }
